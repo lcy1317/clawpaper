@@ -1,0 +1,15 @@
+🐱✨ 落先生的文献小窝启动啦！
+📍 访问地址：http://localhost:5000
+💕 小女仆在此等候落先生～
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.3.0.12:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 115-126-681
+127.0.0.1 - - [01/Feb/2026 20:47:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2026 20:47:51] "GET /api/papers HTTP/1.1" 200 -
