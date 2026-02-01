@@ -920,6 +920,102 @@
         "impact_factor_label": "IF: 14.8",
         "notes": "ACM计算综述"
       }
+    },
+    {
+      "id": "trustworthy_ai_survey_2022",
+      "title": "Trustworthy Artificial Intelligence: A Review",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2022,
+      "venue": "ACM Comput. Surv.",
+      "institution": "ACM",
+      "file": null,
+      "abstract": "本文综述可信赖人工智能的定义、框架和评估方法。",
+      "trust_dimensions": {
+        "transparency": "透明度",
+        "explainability": "可解释性",
+        "fairness": "公平性",
+        "robustness": "鲁棒性",
+        "accountability": "问责制",
+        "privacy": "隐私"
+      },
+      "bibtex": "@article{tai2022, author={Various Authors}, title={Trustworthy Artificial Intelligence: A Review}, journal={ACM Comput. Surv.}, volume={55}, number={2}, pages={1-35}, year={2022}, doi={10.1145/3491209} }",
+      "tags": [
+        "AI可信度",
+        "综述"
+      ],
+      "journal_info": {
+        "type": "SCI Q1期刊",
+        "ranking": "SCI Q1",
+        "publisher": "ACM",
+        "access_url": "https://dl.acm.org/doi/10.1145/3491209",
+        "doi": "10.1145/3491209",
+        "impact_factor": 14.8,
+        "impact_factor_label": "IF: 14.8"
+      }
+    },
+    {
+      "id": "trustworthy_ai_principles_2023",
+      "title": "Trustworthy AI: From Principles to Practices",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2023,
+      "venue": "ACM Comput. Surv.",
+      "institution": "ACM",
+      "file": null,
+      "abstract": "本文介绍AI可信度的理论框架，包括鲁棒性、泛化性、可解释性等。",
+      "trust_dimensions": {
+        "robustness": "鲁棒性",
+        "generalization": "泛化性",
+        "explainability": "可解释性",
+        "transparency": "透明性"
+      },
+      "bibtex": "@article{tai2023, author={Various Authors}, title={Trustworthy AI: From Principles to Practices}, journal={ACM Comput. Surv.}, volume={55}, number={4}, pages={1-41}, year={2023}, doi={10.1145/3555803} }",
+      "tags": [
+        "AI可信度"
+      ],
+      "journal_info": {
+        "type": "SCI Q1期刊",
+        "ranking": "SCI Q1",
+        "publisher": "ACM",
+        "access_url": "https://dl.acm.org/doi/10.1145/3555803",
+        "doi": "10.1145/3555803",
+        "impact_factor": 14.8,
+        "impact_factor_label": "IF: 14.8"
+      }
+    },
+    {
+      "id": "trust_ml_kdd_2023",
+      "title": "Trustworthy Machine Learning: Robustness, Generalization, and Interpretability",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2023,
+      "venue": "ACM KDD",
+      "institution": "ACM",
+      "file": null,
+      "abstract": "KDD 2023会议论文，讨论可信机器学习的核心维度。",
+      "trust_dimensions": {
+        "robustness": "鲁棒性",
+        "generalization": "泛化性",
+        "interpretability": "可解释性"
+      },
+      "bibtex": "@article{mltrust2023, author={Various Authors}, title={Trustworthy Machine Learning}, journal={ACM KDD 2023}, pages={1-12}, year={2023}, doi={10.1145/3580305.3599574} }",
+      "tags": [
+        "机器学习",
+        "KDD"
+      ],
+      "journal_info": {
+        "type": "CCF-A会议",
+        "ranking": "CCF-A",
+        "publisher": "ACM",
+        "access_url": "https://dl.acm.org/doi/10.1145/3580305.3599574",
+        "doi": "10.1145/3580305.3599574",
+        "impact_factor": "N/A",
+        "impact_factor_label": "KDD 2023"
+      }
     }
   ],
   "statistics": {
