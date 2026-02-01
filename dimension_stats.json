@@ -1,0 +1,107 @@
+{
+  "top_dimensions": [
+    {
+      "dimension": "reputation",
+      "count": 3,
+      "percentage": 11.1
+    },
+    {
+      "dimension": "security",
+      "count": 3,
+      "percentage": 11.1
+    },
+    {
+      "dimension": "trust",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "self_assessment",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "cloud_audit",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "usability",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "continuous_verification",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "least_privilege",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "micro_segmentation",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "transparency",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "compliance",
+      "count": 2,
+      "percentage": 7.4
+    },
+    {
+      "dimension": "human_agency_oversight",
+      "count": 1,
+      "percentage": 3.7
+    },
+    {
+      "dimension": "fairness_nondiscrimination",
+      "count": 1,
+      "percentage": 3.7
+    },
+    {
+      "dimension": "transparency_explainability",
+      "count": 1,
+      "percentage": 3.7
+    },
+    {
+      "dimension": "robustness_accuracy",
+      "count": 1,
+      "percentage": 3.7
+    },
+    {
+      "dimension": "privacy_security",
+      "count": 1,
+      "percentage": 3.7
+    },
+    {
+      "dimension": "accountability",
+      "count": 1,
+      "percentage": 3.7
+    },
+    {
+      "dimension": "actual_trustworthiness",
+      "count": 1,
+      "percentage": 3.7
+    },
+    {
+      "dimension": "perceived_trustworthiness",
+      "count": 1,
+      "percentage": 3.7
+    },
+    {
+      "dimension": "trust_propensity",
+      "count": 1,
+      "percentage": 3.7
+    }
+  ],
+  "total_papers": 27,
+  "total_dimensions": 106,
+  "unique_dimensions": 93
+}

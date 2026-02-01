@@ -234,7 +234,70 @@ HTML_TEMPLATE = """
         .summary-card h2 { color: #ffca28; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .summary-content { background: rgba(0, 0, 0, 0.2); border-radius: 15px; padding: 25px; line-height: 1.9; color: #d0d0d0; white-space: pre-wrap; }
         
-        .footer { text-align: center; padding: 40px; color: #666; }
+        
+        /* Sidebar Styles */
+        .main-layout { display: flex; gap: 30px; align-items: flex-start; }
+        .main-content { flex: 1; min-width: 0; }
+        .sidebar {
+            width: 320px;
+            position: sticky;
+            top: 20px;
+            flex-shrink: 0;
+        }
+        .sidebar-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .sidebar-section h3 {
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .top-dimensions { display: flex; flex-direction: column; gap: 10px; }
+        .dim-item { margin-bottom: 8px; }
+        .dim-header { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+        .dim-rank { 
+            background: linear-gradient(135deg, #667eea, #764ba2); 
+            color: white; 
+            padding: 2px 6px; 
+            border-radius: 8px; 
+            font-size: 0.7em; 
+            font-weight: bold;
+            min-width: 28px;
+            text-align: center;
+        }
+        .dim-name { flex: 1; font-size: 0.85em; color: #e0e0e0; }
+        .dim-count { font-size: 0.75em; color: #888; }
+        .dim-bar-bg { background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; overflow: hidden; }
+        .dim-bar { height: 100%; border-radius: 3px; transition: width 0.3s; }
+        .stats-summary .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .stats-summary .stat-row:last-child { border-bottom: none; }
+        .stats-summary span { color: #888; font-size: 0.9em; }
+        .stats-summary strong { color: #667eea; font-size: 1.1em; }
+        
+        @media (max-width: 1200px) {
+            .main-layout { flex-direction: column; }
+            .sidebar { width: 100%; position: static; }
+            .sidebar-section { display: inline-block; width: calc(50% - 10px); vertical-align: top; }
+            .stats-summary { width: calc(50% - 10px); display: inline-block; }
+        }
+        @media (max-width: 768px) {
+            .sidebar-section, .stats-summary { width: 100%; }
+        }
+
+
+.footer { text-align: center; padding: 40px; color: #666; }
         .footer .heart { color: #ff6b6b; animation: heartbeat 1s infinite; display: inline-block; }
         @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
         
@@ -250,49 +313,42 @@ HTML_TEMPLATE = """
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="mascot">🐱✨</div>
-            <h1>落先生的文献小窝 V2.0</h1>
-            <p class="subtitle">🌸 信任度评估系统专题 - 学术文献资源库 💕</p>
+    <div class="container">        <div class="main-layout">
+            <div class="main-content">
+                <section class="summary-card">
+                    <h2>📚 小女仆的学习总结 💕</h2>
+                    <div class="summary-content">SUMMARY_CONTENT</div>
+                </section>
+                
+                <section class="filter-section">
+                    <h3 class="filter-title"><i class="fas fa-filter"></i> 文献筛选与排序</h3>
+                    <div class="filter-controls">
+                        <button class="sort-btn active" data-sort="default">📅 默认排序</button>
+                        <button class="sort-btn" data-sort="if_desc">📈 影响因子↓</button>
+                        <button class="sort-btn" data-sort="if_asc">📉 影响因子↑</button>
+                        <button class="sort-btn" data-sort="year_desc">🆕 最新发布</button>
+                        <button class="sort-btn" data-sort="year_asc">📜 最早发布</button>
+                        <select class="dimension-select" id="dimensionFilter">
+                            <option value信任维度筛选="">🎯 按</option>
+                            DIM_OPTIONS
+                        </select>
+                    </div>
+                </section>
+                
+                <h2 style="color: #fff; margin-bottom: 25px; text-align: center;"><i class="fas fa-book-open" style="color: #667eea;"></i> 学术文献</h2>
+                
+                <div class="papers-grid" id="papersGrid">PAPERS_HTML</div>
+                
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>没有找到匹配的文献</h3>
+                    <p>请尝试调整筛选条件</p>
+                </div>
+            </div>
             
-            <div class="stats-bar">
-                <div class="stat-card"><div class="stat-number">PAPERS_COUNT</div><div class="stat-label">📚 总文献数</div></div>
-                <div class="stat-card"><div class="stat-number">STATS_Q1</div><div class="stat-label">🟢 SCI Q1</div></div>
-                <div class="stat-card"><div class="stat-number">STATS_Q2</div><div class="stat-label">🟠 SCI Q2</div></div>
-                <div class="stat-card"><div class="stat-number">STATS_EI</div><div class="stat-label">🔴 EI 会议</div></div>
-                <div class="stat-card"><div class="stat-number">DIM_COUNT</div><div class="stat-label">🎯 信任维度</div></div>
+            <div class="sidebar" id="sidebarSection">
+                <!-- Sidebar populated by JavaScript -->
             </div>
-        </header>
-        
-        <section class="summary-card">
-            <h2>📚 小女仆的学习总结 💕</h2>
-            <div class="summary-content">SUMMARY_CONTENT</div>
-        </section>
-        
-        <section class="filter-section">
-            <h3 class="filter-title"><i class="fas fa-filter"></i> 文献筛选与排序</h3>
-            <div class="filter-controls">
-                <button class="sort-btn active" data-sort="default">📅 默认排序</button>
-                <button class="sort-btn" data-sort="if_desc">📈 影响因子↓</button>
-                <button class="sort-btn" data-sort="if_asc">📉 影响因子↑</button>
-                <button class="sort-btn" data-sort="year_desc">🆕 最新发布</button>
-                <button class="sort-btn" data-sort="year_asc">📜 最早发布</button>
-                <select class="dimension-select" id="dimensionFilter">
-                    <option value="">🎯 按信任维度筛选</option>
-                    DIM_OPTIONS
-                </select>
-            </div>
-        </section>
-        
-        <h2 style="color: #fff; margin-bottom: 25px; text-align: center;"><i class="fas fa-book-open" style="color: #667eea;"></i> 学术文献</h2>
-        
-        <div class="papers-grid" id="papersGrid">PAPERS_HTML</div>
-        
-        <div class="no-results" id="noResults" style="display: none;">
-            <i class="fas fa-search"></i>
-            <h3>没有找到匹配的文献</h3>
-            <p>请尝试调整筛选条件</p>
         </div>
         
         <footer class="footer">
@@ -301,8 +357,7 @@ HTML_TEMPLATE = """
             <p style="margin-top: 5px; opacity: 0.5; font-size: 0.85em;">更新日期：CURRENT_DATE</p>
         </footer>
     </div>
-    
-    <div class="modal" id="paperModal">
+<div class="modal" id="paperModal">
         <div class="modal-content"><span class="modal-close" onclick="closeModal()">&times;</span><div id="modalBody"></div></div>
     </div>
     
@@ -458,8 +513,284 @@ HTML_TEMPLATE = """
             sortAndFilterPapers();
         });
         
+        // 生成侧边栏统计
+        generateSidebar();
+        
         document.getElementById('paperModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
     </script>
+    <script>
+    // 维度统计数据
+    const dimensionStats = DIM_STATS_JSON;
+    
+    function generateSidebar() {
+        const sidebar = document.getElementById('sidebarSection');
+        if (!sidebar) return;
+        
+        const topDims = dimensionStats.top_dimensions.slice(0, 10);
+        
+        let html = `
+            <div class="sidebar-section">
+                <h3><i class="fas fa-chart-pie"></i> 维度统计</h3>
+                <canvas id="dimensionChart" width="280" height="200"></canvas>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3><i class="fas fa-trophy"></i> Top 10 维度</h3>
+                <div class="top-dimensions">
+        `;
+        
+        topDims.forEach((item, index) => {
+            const barWidth = (item.count / topDims[0].count) * 100;
+            html += `
+                <div class="dim-item">
+                    <div class="dim-header">
+                        <span class="dim-rank">#${index + 1}</span>
+                        <span class="dim-name">${item.dimension}</span>
+                        <span class="dim-count">${item.count} (${item.percentage}%)</span>
+                    </div>
+                    <div class="dim-bar-bg">
+                        <div class="dim-bar" style="width:${barWidth}%;"></div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `
+                </div>
+            </div>
+            
+            <div class="sidebar-section stats-summary">
+                <h3><i class="fas fa-chart-bar"></i> 统计概览</h3>
+                <div class="stat-row">
+                    <span>📚 文献总数</span>
+                    <strong>${dimensionStats.total_papers}</strong>
+                </div>
+                <div class="stat-row">
+                    <span>🎯 唯一维度</span>
+                    <strong>${dimensionStats.unique_dimensions}</strong>
+                </div>
+                <div class="stat-row">
+                    <span>📊 维度总数</span>
+                    <strong>${dimensionStats.total_dimensions}</strong>
+                </div>
+            </div>
+        `;
+        
+        sidebar.innerHTML = html;
+        
+        // 初始化图表
+        setTimeout(() => initChart(), 100);
+    }
+    
+    function initChart() {
+        const canvas = document.getElementById('dimensionChart');
+        if (!canvas) return;
+        
+        const ctx = canvas.getContext('2d');
+        const data = dimensionStats.top_dimensions.slice(0, 8);
+        
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: data.map(d => d.dimension),
+                datasets: [{
+                    data: data.map(d => d.count),
+                    backgroundColor: [
+                        '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7',
+                        '#DDA0DD', '#98D8C8', '#F7DC6F'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#a0a0a0',
+                            font: { size: 9 },
+                            padding: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    </script>
+<!-- Sidebar and Charts -->
+    <div class="sidebar">
+        <div class="sidebar-section">
+            <h3><i class="fas fa-chart-pie"></i> 维度统计</h3>
+            <canvas id="dimensionChart" width="280" height="280"></canvas>
+        </div>
+        
+        <div class="sidebar-section">
+            <h3><i class="fas fa-trophy"></i> Top 10 维度</h3>
+            <div class="top-dimensions">
+                
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#1</span>
+                <span class="dim-name">reputation</span>
+                <span class="dim-count">3 (11.1%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:100%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#2</span>
+                <span class="dim-name">security</span>
+                <span class="dim-count">3 (11.1%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:100%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#3</span>
+                <span class="dim-name">trust</span>
+                <span class="dim-count">2 (7.4%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:66%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#4</span>
+                <span class="dim-name">self_assessment</span>
+                <span class="dim-count">2 (7.4%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:66%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#5</span>
+                <span class="dim-name">cloud_audit</span>
+                <span class="dim-count">2 (7.4%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:66%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#6</span>
+                <span class="dim-name">usability</span>
+                <span class="dim-count">2 (7.4%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:66%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#7</span>
+                <span class="dim-name">continuous_verification</span>
+                <span class="dim-count">2 (7.4%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:66%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#8</span>
+                <span class="dim-name">least_privilege</span>
+                <span class="dim-count">2 (7.4%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:66%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#9</span>
+                <span class="dim-name">micro_segmentation</span>
+                <span class="dim-count">2 (7.4%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:66%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+        <div class="dim-item">
+            <div class="dim-header">
+                <span class="dim-rank">#10</span>
+                <span class="dim-name">transparency</span>
+                <span class="dim-count">2 (7.4%)</span>
+            </div>
+            <div class="dim-bar-bg">
+                <div class="dim-bar" style="width:66%;background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+            </div>
+        </div>
+    
+            </div>
+        </div>
+        
+        <div class="sidebar-section stats-summary">
+            <h3><i class="fas fa-chart-bar"></i> 统计概览</h3>
+            <div class="stat-row">
+                <span>📚 文献总数</span>
+                <strong>27</strong>
+            </div>
+            <div class="stat-row">
+                <span>🎯 唯一维度</span>
+                <strong>93</strong>
+            </div>
+            <div class="stat-row">
+                <span>📊 维度总数</span>
+                <strong>106</strong>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('dimensionChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['reputation', 'security', 'trust', 'self_assessment', 'cloud_audit', 'usability', 'continuous_verification', 'least_privilege', 'micro_segmentation', 'transparency', 'compliance', 'human_agency_oversight', 'fairness_nondiscrimination', 'transparency_explainability', 'robustness_accuracy'],
+            datasets: [{
+                data: [3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1],
+                backgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9', '#F8B500', '#00CED1', '#FF69B4', '#7DCEA0', '#E74C3C'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#a0a0a0',
+                        font: { size: 10 },
+                        padding: 8
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>
 """
@@ -484,6 +815,11 @@ def index():
     for dim in sorted(ALL_DIMENSIONS):
         dim_options += '<option value="' + dim + '">' + dim + '</option>'
     html = html.replace('DIM_OPTIONS', dim_options)
+    
+    # 加载维度统计数据
+    with open(os.path.join(LITERATURE_DIR, 'dimension_stats.json'), 'r', encoding='utf-8') as f:
+        dim_stats = json.load(f)
+    html = html.replace('DIM_STATS_JSON', json.dumps(dim_stats))
     
     # 生成论文卡片
     papers_html = []
