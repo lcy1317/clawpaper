@@ -337,7 +337,13 @@ HTML_TEMPLATE = """
                 dimensionsHtml = '<h4 style="color: #667eea; margin: 20px 0 15px;"><i class="fas fa-cube"></i> 信任维度分析</h4><div class="dimensions-grid">' + dimsHtml + '</div>';
             }
             
+            let coverImageHtml = '';
+            if (paper.cover_image) {
+                coverImageHtml = '<img src="' + paper.cover_image + '" alt="封面" style="width:100%;max-height:200px;object-fit:cover;border-radius:16px;margin-bottom:20px;">';
+            }
+            
             document.getElementById('modalBody').innerHTML = 
+                coverImageHtml +
                 '<h2 class="modal-title">' + paper.title + '</h2>' +
                 '<div class="modal-meta">' +
                 '<p><i class="fas fa-user"></i> <strong>作者：</strong>' + paper.authors.join(', ') + '</p>' +
@@ -509,7 +515,14 @@ def index():
             badges += '<span class="badge badge-if">' + journal_info['impact_factor_label'] + '</span>'
         badges += '<span class="badge badge-publisher">' + publisher + '</span>'
         
+        # 封面图片
+        cover_image = paper.get('cover_image', '')
+        cover_html = ''
+        if cover_image:
+            cover_html = '<img src="' + cover_image + '" alt="封面" style="width:100%;height:120px;object-fit:cover;border-radius:12px;margin-bottom:15px;">'
+        
         card = '''<article class="paper-card" data-ranking="RANKING" data-if="IMPACT" data-year="YEAR">
+            COVER_IMAGE
             <span class="paper-year-badge">YEAR</span>
             <h3 class="paper-title">TITLE</h3>
             <div class="paper-meta"><i class="fas fa-user"></i> AUTHORS<br><i class="fas fa-university"></i> INSTITUTION</div>
@@ -519,7 +532,8 @@ def index():
             <div class="action-btns">BTN_DOWNLOAD BTN_ACCESS <button class="btn btn-detail" onclick="showModal('ID')"><i class="fas fa-info-circle"></i> 详情</button></div>
         </article>'''
         
-        card = card.replace('TITLE', paper['title'])\
+        card = card.replace('COVER_IMAGE', cover_html)\
+                   .replace('TITLE', paper['title'])\
                    .replace('AUTHORS', ', '.join(paper['authors']))\
                    .replace('INSTITUTION', paper['institution'])\
                    .replace('YEAR', str(paper['year']))\

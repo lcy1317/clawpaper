@@ -68,7 +68,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "综合综述，覆盖欧盟AI Act要求"
-      }
+      },
+      "cover_image": "img/trustworthy_ai_overview_2024.png"
     },
     {
       "id": "ai_trustworthiness_tram_2025",
@@ -119,7 +120,8 @@
         "impact_factor": 8.9,
         "impact_factor_label": "IF: 8.9",
         "notes": "人类行为计算领域顶级期刊"
-      }
+      },
+      "cover_image": "img/ai_trustworthiness_tram_2025.png"
     },
     {
       "id": "zero_trust_cloud_2025",
@@ -171,7 +173,8 @@
         "impact_factor": 4.2,
         "impact_factor_label": "IF: 4.2",
         "notes": "网络安全领域重要期刊"
-      }
+      },
+      "cover_image": "img/zero_trust_cloud_2025.png"
     },
     {
       "id": "cloud_service_reputation_2025",
@@ -222,7 +225,8 @@
         "impact_factor": 3.8,
         "impact_factor_label": "IF: 3.8",
         "notes": "计算期刊"
-      }
+      },
+      "cover_image": "img/cloud_service_reputation_2025.png"
     },
     {
       "id": "cloud_credibility_entropy_2025",
@@ -272,7 +276,8 @@
         "impact_factor": 4.6,
         "impact_factor_label": "IF: 4.6",
         "notes": "Nature系列期刊"
-      }
+      },
+      "cover_image": "img/cloud_credibility_entropy_2025.png"
     },
     {
       "id": "sbom_supply_chain_2025",
@@ -323,7 +328,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "全面SBOM综述研究"
-      }
+      },
+      "cover_image": "img/sbom_supply_chain_2025.png"
     },
     {
       "id": "sbom_integrity_2025",
@@ -373,7 +379,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "SBOM安全性深度分析"
-      }
+      },
+      "cover_image": "img/sbom_integrity_2025.png"
     },
     {
       "id": "zero_trust_survey_2025",
@@ -422,7 +429,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "NIST ZTA框架综述"
-      }
+      },
+      "cover_image": "img/zero_trust_survey_2025.png"
     },
     {
       "id": "zero_trust_cloud_2025_access",
@@ -472,7 +480,8 @@
         "impact_factor": 2.7,
         "impact_factor_label": "IF: 2.7",
         "notes": "对称期刊"
-      }
+      },
+      "cover_image": "img/zero_trust_cloud_2025_access.png"
     },
     {
       "id": "ai_evaluation_risks_2025",
@@ -521,7 +530,8 @@
         "impact_factor": 2.6,
         "impact_factor_label": "IF: 2.6",
         "notes": "电子学期刊"
-      }
+      },
+      "cover_image": "img/ai_evaluation_risks_2025.png"
     },
     {
       "id": "trust_ai_scale_2025",
@@ -570,7 +580,8 @@
         "impact_factor": 3.5,
         "impact_factor_label": "IF: 3.5",
         "notes": "人工智能前沿"
-      }
+      },
+      "cover_image": "img/trust_ai_scale_2025.png"
     },
     {
       "id": "trust_distrust_xai_2025",
@@ -620,7 +631,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "EI检索",
         "notes": "XAI智能系统期刊"
-      }
+      },
+      "cover_image": "img/trust_distrust_xai_2025.png"
     },
     {
       "id": "ai_decoding_trust_2025",
@@ -670,7 +682,8 @@
         "impact_factor": 2.4,
         "impact_factor_label": "IF: 2.4",
         "notes": "信息学期刊"
-      }
+      },
+      "cover_image": "img/ai_decoding_trust_2025.png"
     },
     {
       "id": "public_trust_ai_2025",
@@ -717,7 +730,8 @@
         "impact_factor": 4.6,
         "impact_factor_label": "IF: 4.6",
         "notes": "Nature系列期刊"
-      }
+      },
+      "cover_image": "img/public_trust_ai_2025.png"
     },
     {
       "id": "cloud_iot_credibility_2025",
@@ -765,7 +779,8 @@
         "impact_factor": 2.1,
         "impact_factor_label": "IF: 2.1",
         "notes": "国际信息技术期刊"
-      }
+      },
+      "cover_image": "img/cloud_iot_credibility_2025.png"
     },
     {
       "id": "cloud_marketplace_trust_2025",
@@ -813,7 +828,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "ResearchGate",
         "notes": "云市场安全研究"
-      }
+      },
+      "cover_image": "img/cloud_marketplace_trust_2025.png"
     },
     {
       "id": "collaborative_cloud_trust_2025",
@@ -861,7 +877,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "EI检索",
         "notes": "计算机科学会议论文"
-      }
+      },
+      "cover_image": "img/collaborative_cloud_trust_2025.png"
     },
     {
       "id": "ai_trustworthiness_survey_2024",
@@ -902,7 +919,8 @@
         "impact_factor": 2.6,
         "impact_factor_label": "IF: 2.6",
         "notes": "MDPI开放获取期刊"
-      }
+      },
+      "cover_image": "img/ai_trustworthiness_survey_2024.png"
     },
     {
       "id": "cloud_trust_fuzzy_2024",
@@ -944,7 +962,8 @@
         "impact_factor": 4.6,
         "impact_factor_label": "IF: 4.6",
         "notes": "Nature系列期刊"
-      }
+      },
+      "cover_image": "img/cloud_trust_fuzzy_2024.png"
     },
     {
       "id": "cross_cloud_trust_2020",
@@ -985,7 +1004,8 @@
         "impact_factor": 14.8,
         "impact_factor_label": "IF: 14.8",
         "notes": "ACM计算综述顶级期刊"
-      }
+      },
+      "cover_image": "img/cross_cloud_trust_2020.png"
     },
     {
       "id": "cwe_ics_2023",
@@ -1026,7 +1046,8 @@
         "impact_factor": 3.4,
         "impact_factor_label": "IF: 3.4",
         "notes": "IEEE安全与隐私期刊"
-      }
+      },
+      "cover_image": "img/cwe_ics_2023.png"
     },
     {
       "id": "ml_data_audit_2024",
@@ -1066,7 +1087,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "CCS 2024",
         "notes": "ACM计算机与通信安全顶会"
-      }
+      },
+      "cover_image": "img/ml_data_audit_2024.png"
     },
     {
       "id": "explainable_ai_sok_2024",
@@ -1107,7 +1129,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "IEEE S&P 2024",
         "notes": "IEEE安全与隐私顶会"
-      }
+      },
+      "cover_image": "img/explainable_ai_sok_2024.png"
     },
     {
       "id": "zero_trust_survey_2024",
@@ -1149,7 +1172,8 @@
         "impact_factor": 3.9,
         "impact_factor_label": "IF: 3.9",
         "notes": "IEEE开放获取期刊"
-      }
+      },
+      "cover_image": "img/zero_trust_survey_2024.png"
     },
     {
       "id": "blockchain_trust_2024",
@@ -1190,7 +1214,8 @@
         "impact_factor": 10.6,
         "impact_factor_label": "IF: 10.6",
         "notes": "IEEE物联网期刊"
-      }
+      },
+      "cover_image": "img/blockchain_trust_2024.png"
     },
     {
       "id": "software_supply_chain_2024",
@@ -1230,7 +1255,8 @@
         "impact_factor": "N/A",
         "impact_factor_label": "USENIX Security 2024",
         "notes": "USENIX安全顶会"
-      }
+      },
+      "cover_image": "img/software_supply_chain_2024.png"
     },
     {
       "id": "privacy_preserving_ml_2024",
@@ -1272,7 +1298,8 @@
         "impact_factor": 14.8,
         "impact_factor_label": "IF: 14.8",
         "notes": "ACM计算综述"
-      }
+      },
+      "cover_image": "img/privacy_preserving_ml_2024.png"
     }
   ],
   "statistics": {
