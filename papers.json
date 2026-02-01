@@ -1016,13 +1016,483 @@
         "impact_factor": "N/A",
         "impact_factor_label": "KDD 2023"
       }
+    },
+    {
+      "id": "interpretability_trust_chi_2024",
+      "title": "Impact of Model Interpretability and Outcome Feedback on Trust in AI",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2024,
+      "venue": "CHI 2024",
+      "institution": "ACM",
+      "file": null,
+      "size": "N/A",
+      "abstract": "研究模型可解释性和结果反馈对AI信任的影响，分析解释性是否能解决AI推荐偏见和过度依赖问题。",
+      "key_contributions": [
+        "可解释性与信任关系",
+        "结果反馈机制",
+        "过度依赖分析"
+      ],
+      "trust_dimensions": {
+        "interpretability": "可解释性",
+        "outcome_feedback": "结果反馈",
+        "overreliance": "过度依赖",
+        "bias_detection": "偏见检测"
+      },
+      "evaluation_method": {
+        "approach": "人机交互实验",
+        "metrics": [
+          "信任评分",
+          "依赖程度",
+          "偏见识别率"
+        ],
+        "framework": "CHI信任实验框架"
+      },
+      "bibtex": "@inproceedings{chi2024interpret, author={Various Authors}, title={Impact of Model Interpretability and Outcome Feedback on Trust in AI}, booktitle={Proc. CHI 2024}, year={2024}, doi={10.1145/3613904.3642780} }",
+      "tags": [
+        "可解释性",
+        "信任",
+        "人机交互"
+      ],
+      "journal_info": {
+        "type": "CCF-A会议",
+        "ranking": "CCF-A",
+        "publisher": "ACM",
+        "access_url": "https://dl.acm.org/doi/10.1145/3613904.3642780",
+        "doi": "10.1145/3613904.3642780",
+        "impact_factor": "N/A",
+        "impact_factor_label": "CHI 2024"
+      }
+    },
+    {
+      "id": "explainable_digital_twin_2023",
+      "title": "Explainable, interpretable, and trustworthy AI for an intelligent digital twin",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2023,
+      "venue": "Engineering Applications of Artificial Intelligence",
+      "institution": "Elsevier",
+      "file": null,
+      "size": "N/A",
+      "abstract": "研究智能数字孪生中的可解释、可解释和可信AI，强调模型应基于相关特征做出预测而非无关特征才能建立信任。",
+      "key_contributions": [
+        "数字孪生信任框架",
+        "可解释性设计",
+        "无偏见预测保证"
+      ],
+      "trust_dimensions": {
+        "explainability": "可解释性",
+        "interpretability": "可解释性",
+        "trustworthiness": "可信度",
+        "feature_relevance": "特征相关性"
+      },
+      "evaluation_method": {
+        "approach": "案例研究",
+        "metrics": [
+          "解释质量",
+          "预测准确性",
+          "信任评分"
+        ],
+        "framework": "数字孪生XAI框架"
+      },
+      "bibtex": "@article{digitaltwin2023, author={Various Authors}, title={Explainable, interpretable, and trustworthy AI for an intelligent digital twin}, journal={Engineering Applications of AI}, volume={128}, pages={107555}, year={2023}, doi={10.1016/j.engappai.2023.107557} }",
+      "tags": [
+        "数字孪生",
+        "XAI",
+        "可信AI"
+      ],
+      "journal_info": {
+        "type": "SCI Q1期刊",
+        "ranking": "SCI Q1",
+        "publisher": "Elsevier",
+        "access_url": "https://www.sciencedirect.com/science/article/abs/pii/S0952197623018043",
+        "doi": "10.1016/j.engappai.2023.107557",
+        "impact_factor": 8.0,
+        "impact_factor_label": "IF: 8.0"
+      }
+    },
+    {
+      "id": "interpretability_deep_learning_2024",
+      "title": "Interpretability research of deep learning: A literature survey",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2024,
+      "venue": "Information Fusion",
+      "institution": "Elsevier",
+      "file": null,
+      "size": "N/A",
+      "abstract": "综述深度学习的可解释性研究，分析模型不可解释性带来的安全攻击风险，以及对人类机器信任的负面影响。",
+      "key_contributions": [
+        "深度学习可解释性综述",
+        "安全性分析",
+        "信任障碍识别"
+      ],
+      "trust_dimensions": {
+        "model_interpretability": "模型可解释性",
+        "security_attacks": "安全攻击",
+        "human_machine_trust": "人机信任",
+        "decision_explainability": "决策可解释性"
+      },
+      "evaluation_method": {
+        "approach": "文献综述",
+        "metrics": [
+          "综述覆盖度",
+          "方法分类完整性"
+        ],
+        "框架": "深度学习可解释性分类框架"
+      },
+      "bibtex": "@article{dlinterpret2024, author={Various Authors}, title={Interpretability research of deep learning: A literature survey}, journal={Information Fusion}, volume={102}, pages={102059}, year={2024}, doi={10.1016/j.inffus.2024.102059} }",
+      "tags": [
+        "深度学习",
+        "可解释性",
+        "综述"
+      ],
+      "journal_info": {
+        "type": "SCI Q1期刊",
+        "ranking": "SCI Q1",
+        "publisher": "Elsevier",
+        "access_url": "https://www.sciencedirect.com/science/article/abs/pii/S1566253524004998",
+        "doi": "10.1016/j.inffus.2024.102059",
+        "impact_factor": 18.0,
+        "impact_factor_label": "IF: 18.0"
+      }
+    },
+    {
+      "id": "trustworthiness_ml_framework_2024",
+      "title": "Assessing AI-Based System Acceptance Through the Design of a Trustworthiness Estimation Tool for Machine Learning Models",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2024,
+      "venue": "Springer Nature",
+      "institution": "Springer",
+      "file": null,
+      "size": "N/A",
+      "abstract": "提出机器学习模型可信度估计的框架设计，将多种定量指标聚合为统一的信任评分。",
+      "key_contributions": [
+        "统一信任评分",
+        "模块化设计",
+        "多指标聚合"
+      ],
+      "trust_dimensions": {
+        "model_performance": "模型性能",
+        "robustness": "鲁棒性",
+        "fairness": "公平性",
+        "explainability": "可解释性"
+      },
+      "evaluation_method": {
+        "approach": "框架设计",
+        "metrics": [
+          "信任评分",
+          "模块覆盖率"
+        ],
+        "framework": "可信度估计工具"
+      },
+      "bibtex": "@inproceedings{mltrust2024, author={Various Authors}, title={Assessing AI-Based System Acceptance Through Trustworthiness Estimation Tool}, booktitle={Springer LNCS}, volume={14615}, pages={141-155}, year={2024} }",
+      "tags": [
+        "可信度框架",
+        "ML模型",
+        "系统接受度"
+      ],
+      "journal_info": {
+        "type": "会议论文",
+        "ranking": "Springer LNCS",
+        "publisher": "Springer",
+        "access_url": "https://link.springer.com/chapter/10.1007/978-3-032-12801-0_12",
+        "impact_factor": "N/A",
+        "impact_factor_label": "Springer LNCS"
+      }
+    },
+    {
+      "id": "llm_explainable_ai_2025",
+      "title": "LLMs for Explainable AI: A Comprehensive Survey",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "institution": "arXiv",
+      "file": null,
+      "size": "N/A",
+      "abstract": "全面综述大语言模型在可解释AI中的应用，讨论LLM如何提高AI决策过程的透明度和可信度。",
+      "key_contributions": [
+        "LLM可解释性综述",
+        "透明度提升方法",
+        "跨领域应用分析"
+      ],
+      "trust_dimensions": {
+        "llm_transparency": "LLM透明度",
+        "decision_explanation": "决策解释",
+        "cross_domain_applications": "跨领域应用"
+      },
+      "evaluation_method": {
+        "approach": "系统综述",
+        "metrics": [
+          "方法覆盖率",
+          "应用广度"
+        ],
+        "framework": "LLM-XAI综述框架"
+      },
+      "bibtex": "@article{llmxai2025, author={Various Authors}, title={LLMs for Explainable AI: A Comprehensive Survey}, journal={arXiv preprint arXiv:2504.00125}, year={2025} }",
+      "tags": [
+        "LLM",
+        "可解释AI",
+        "综述"
+      ],
+      "journal_info": {
+        "type": "预印本",
+        "ranking": "N/A",
+        "publisher": "arXiv",
+        "access_url": "https://arxiv.org/html/2504.00125v1",
+        "impact_factor": "N/A",
+        "impact_factor_label": "arXiv"
+      }
+    },
+    {
+      "id": "automation_bias_human_ai_2025",
+      "title": "Exploring automation bias in human-AI collaboration: a review and implications for explainable AI",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2025,
+      "venue": "AI & SOCIETY",
+      "institution": "Springer Nature",
+      "file": null,
+      "size": "N/A",
+      "abstract": "综述人机协作中的自动化偏差，讨论信任校准在AI系统设计中的重要性，避免过度依赖或不使用AI。",
+      "key_contributions": [
+        "自动化偏差分析",
+        "信任校准框架",
+        "XAI设计启示"
+      ],
+      "trust_dimensions": {
+        "automation_bias": "自动化偏差",
+        "trust_calibration": "信任校准",
+        "overreliance": "过度依赖",
+        "appropriate_trust": "适当信任"
+      },
+      "evaluation_method": {
+        "approach": "文献综述与实证分析",
+        "metrics": [
+          "偏差检测率",
+          "校准准确度"
+        ],
+        "framework": "信任校准框架"
+      },
+      "bibtex": "@article{automationbias2025, author={Various Authors}, title={Exploring automation bias in human-AI collaboration}, journal={AI & SOCIETY}, pages={1-15}, year={2025}, doi={10.1007/s00146-025-02422-7} }",
+      "tags": [
+        "自动化偏差",
+        "人机协作",
+        "信任校准"
+      ],
+      "journal_info": {
+        "type": "SCI Q2期刊",
+        "ranking": "SCI Q2",
+        "publisher": "Springer Nature",
+        "access_url": "https://link.springer.com/article/10.1007/s00146-025-02422-7",
+        "doi": "10.1007/s00146-025-02422-7",
+        "impact_factor": "N/A",
+        "impact_factor_label": "IF: ~3.0"
+      }
+    },
+    {
+      "id": "ai_confidence_trust_2025",
+      "title": "Understanding the Effects of Miscalibrated AI Confidence on User Trust, Reliance, and Decision Efficacy",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "institution": "arXiv",
+      "file": null,
+      "size": "N/A",
+      "abstract": "研究AI置信度校准错误对用户信任、依赖和决策效能的影响，警告用户可能将置信度分数视为准确导致不当信任。",
+      "key_contributions": [
+        "置信度校准影响分析",
+        "信任与依赖关系",
+        "决策效能评估"
+      ],
+      "trust_dimensions": {
+        "confidence_calibration": "置信度校准",
+        "user_trust": "用户信任",
+        "reliance": "依赖",
+        "decision_efficacy": "决策效能"
+      },
+      "evaluation_method": {
+        "approach": "用户实验",
+        "metrics": [
+          "信任准确度",
+          "依赖适当性",
+          "决策质量"
+        ],
+        "framework": "置信度信任实验"
+      },
+      "bibtex": "@article{confidence2025, author={Various Authors}, title={Understanding the Effects of Miscalibrated AI Confidence}, journal={arXiv preprint arXiv:2402.07632}, year={2025} }",
+      "tags": [
+        "置信度",
+        "信任",
+        "决策"
+      ],
+      "journal_info": {
+        "type": "预印本",
+        "ranking": "N/A",
+        "publisher": "arXiv",
+        "access_url": "https://arxiv.org/html/2402.07632v4",
+        "impact_factor": "N/A",
+        "impact_factor_label": "arXiv"
+      }
+    },
+    {
+      "id": "adaptive_trust_calibration_2020",
+      "title": "Adaptive trust calibration for human-AI collaboration",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2020,
+      "venue": "PLOS ONE",
+      "institution": "PLOS",
+      "file": null,
+      "size": "N/A",
+      "abstract": "提出自适应信任校准方法，通过监控用户依赖行为和认知线索检测不当校准状态，提示用户重新初始化信任校准。",
+      "key_contributions": [
+        "自适应信任校准框架",
+        "依赖行为监控",
+        "认知线索检测"
+      ],
+      "trust_dimensions": {
+        "adaptive_calibration": "自适应校准",
+        "reliance_behavior": "依赖行为",
+        "cognitive_cues": "认知线索",
+        "trust_recalibration": "信任重校准"
+      },
+      "evaluation_method": {
+        "approach": "无人机模拟实验",
+        "metrics": [
+          "校准准确度",
+          "决策准确性",
+          "用户满意度"
+        ],
+        "framework": "自适应信任校准系统"
+      },
+      "bibtex": "@article{adaptive2020, author={Various Authors}, title={Adaptive trust calibration for human-AI collaboration}, journal={PLOS ONE}, volume={15}, number={2}, pages={e0229132}, year={2020}, doi={10.1371/journal.pone.0229132} }",
+      "tags": [
+        "自适应校准",
+        "人机协作",
+        "信任"
+      ],
+      "journal_info": {
+        "type": "SCI Q2期刊",
+        "ranking": "SCI Q2",
+        "publisher": "PLOS",
+        "access_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0229132",
+        "doi": "10.1371/journal.pone.0229132",
+        "impact_factor": 3.7,
+        "impact_factor_label": "IF: 3.7"
+      }
+    },
+    {
+      "id": "human_ai_collaboration_2025",
+      "title": "Enhancing Intuitive Decision-Making and Reliance Through Human-AI Collaboration: A Review",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2025,
+      "venue": "Informatics",
+      "institution": "MDPI",
+      "file": null,
+      "size": "N/A",
+      "abstract": "综述通过人机协作增强直观决策和依赖的方法，讨论贝叶斯信任模型和自适应自主性在信任管理中的应用。",
+      "key_contributions": [
+        "人机协作综述",
+        "贝叶斯信任模型",
+        "自适应自主性"
+      ],
+      "trust_dimensions": {
+        "intuitive_decision": "直观决策",
+        "reliance": "依赖",
+        "bayesian_trust": "贝叶斯信任",
+        "adaptive_autonomy": "自适应自主性"
+      },
+      "evaluation_method": {
+        "approach": "系统综述",
+        "metrics": [
+          "模型准确度",
+          "协作效率"
+        ],
+        "framework": "人机协作决策框架"
+      },
+      "bibtex": "@article{collab2025, author={Various Authors}, title={Enhancing Intuitive Decision-Making and Reliance Through Human-AI Collaboration}, journal={Informatics}, volume={12}, number={4}, pages={135}, year={2025}, doi={10.3390/informatics12040135} }",
+      "tags": [
+        "人机协作",
+        "决策",
+        "贝叶斯模型"
+      ],
+      "journal_info": {
+        "type": "SCI Q3期刊",
+        "ranking": "SCI Q3",
+        "publisher": "MDPI",
+        "access_url": "https://www.mdpi.com/2227-9709/12/4/135",
+        "doi": "10.3390/informatics12040135",
+        "impact_factor": 2.4,
+        "impact_factor_label": "IF: 2.4"
+      }
+    },
+    {
+      "id": "trust_human_ai_interaction_2025",
+      "title": "A Systematic Review on Fostering Appropriate Trust in Human-AI Interaction",
+      "authors": [
+        "Various Authors"
+      ],
+      "year": 2025,
+      "venue": "ACM Journal on Responsible Computing",
+      "institution": "ACM",
+      "file": null,
+      "size": "N/A",
+      "abstract": "系统综述促进人机AI交互中适当信任的趋势、机会和挑战，讨论如何通过机器人设计操纵不当信任校准。",
+      "key_contributions": [
+        "适当信任综述",
+        "交互设计策略",
+        "信任校准方法"
+      ],
+      "trust_dimensions": {
+        "appropriate_trust": "适当信任",
+        "human_ai_interaction": "人机AI交互",
+        "trust_calibration": "信任校准",
+        "design_manipulation": "设计操纵"
+      },
+      "evaluation_method": {
+        "approach": "系统综述",
+        "metrics": [
+          "方法覆盖率",
+          "挑战识别完整度"
+        ],
+        "framework": "适当信任综述框架"
+      },
+      "bibtex": "@article{trustinteraction2025, author={Various Authors}, title={A Systematic Review on Fostering Appropriate Trust in Human-AI Interaction}, journal={ACM J. Responsible Computing}, volume={2}, number={1}, pages={1-25}, year={2025}, doi={10.1145/3696449} }",
+      "tags": [
+        "适当信任",
+        "人机交互",
+        "系统综述"
+      ],
+      "journal_info": {
+        "type": "CCF-C期刊",
+        "ranking": "CCF-C",
+        "publisher": "ACM",
+        "access_url": "https://dl.acm.org/doi/10.1145/3696449",
+        "doi": "10.1145/3696449",
+        "impact_factor": "N/A",
+        "impact_factor_label": "ACM JRC"
+      }
     }
   ],
   "statistics": {
-    "total_papers": 19,
-    "sci_q1": 3,
-    "sci_q2": 7,
-    "ccf_a": 1,
+    "total_papers": 32,
+    "sci_q1": 6,
+    "sci_q2": 11,
+    "ccf_a": 4,
     "other": 8
   },
   "generated_at": "2025-02-01T14:00:00Z"

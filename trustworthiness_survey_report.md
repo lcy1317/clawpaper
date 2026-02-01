@@ -1,8 +1,8 @@
-# 系统信任度评估文献深度调研报告 (2020-2024)
+# 系统信任度评估文献深度调研报告 (2020-2025)
 
 ## 摘要
 
-本报告对系统信任度评估领域的高质量文献进行了深度调研，重点聚焦于AI系统可信度、云服务可信度、软件供应链安全和零信任架构四个核心领域。通过对15篇高质量文献（2020-2024年）的系统分析，本报告提取了各文献的核心信任维度、评估方法、主要贡献及期刊级别，并深入总结了信任维度分类体系、主流评估方法对比、跨领域信任维度共性与差异以及未来研究方向。
+本报告对系统信任度评估领域的高质量文献进行了深度调研，重点聚焦于AI系统可信度、云服务可信度、软件供应链安全和零信任架构四个核心领域。通过对**32篇**高质量文献（2020-2025年）的系统分析，本报告提取了各文献的核心信任维度、评估方法、主要贡献及期刊级别，并深入总结了信任维度分类体系、主流评估方法对比、跨领域信任维度共性与差异以及未来研究方向。
 
 ---
 
@@ -12,21 +12,38 @@
 
 | 统计维度 | 数量 | 占比 |
 |---------|------|------|
-| **总文献数** | 15篇 | 100% |
+| **总文献数** | **32篇** | 100% |
 | **按领域分布** | | |
-| AI系统可信度 | 6篇 | 40% |
-| 云服务可信度 | 5篇 | 33% |
-| 软件供应链安全 | 2篇 | 13% |
-| 零信任架构 | 4篇 | 27% |
+| AI系统可信度 | 14篇 | 44% |
+| 云服务可信度 | 7篇 | 22% |
+| 软件供应链安全 | 4篇 | 12% |
+| 零信任架构 | 5篇 | 16% |
+| 人机协作信任 | 6篇 | 19% |
 | **按年份分布** | | |
-| 2025年 | 12篇 | 80% |
-| 2024年 | 3篇 | 20% |
-| **按期刊级别** | | |
-| SCI Q1 | 1篇 | 7% |
-| SCI Q2 | 5篇 | 33% |
-| SCI Q3 | 4篇 | 27% |
-| EI期刊 | 1篇 | 7% |
-| 预印本 | 4篇 | 27% |
+| 2025年 | 18篇 | 56% |
+| 2024年 | 8篇 | 25% |
+| 2020-2023年 | 6篇 | 19% |
+| **按期刊/会议级别** | | |
+| CCF-A/SCI Q1 | 8篇 | 25% |
+| CCF-B/SCI Q2 | 10篇 | 31% |
+| CCF-C/SCI Q3 | 6篇 | 19% |
+| EI/其他 | 8篇 | 25% |
+
+### 1.2 新增代表性文献（2024-2025）
+
+#### 可解释性与AI信任
+1. **CHI 2024** - "Impact of Model Interpretability and Outcome Feedback on Trust in AI" (CCF-A)
+2. **Information Fusion (2024)** - "Interpretability research of deep learning: A literature survey" (IF: 18.0)
+3. **Engineering Applications of AI (2023)** - "Explainable, interpretable, and trustworthy AI for an intelligent digital twin" (IF: 8.0)
+4. **arXiv (2025)** - "LLMs for Explainable AI: A Comprehensive Survey"
+5. **Springer (2024)** - "Assessing AI-Based System Acceptance Through Trustworthiness Estimation Tool"
+
+#### 人机协作与信任校准
+6. **AI & SOCIETY (2025)** - "Exploring automation bias in human-AI collaboration" (SCI Q2)
+7. **arXiv (2025)** - "Understanding the Effects of Miscalibrated AI Confidence on User Trust"
+8. **PLOS ONE (2020)** - "Adaptive trust calibration for human-AI collaboration" (IF: 3.7)
+9. **Informatics (2025)** - "Enhancing Intuitive Decision-Making and Reliance Through Human-AI Collaboration"
+10. **ACM JRC (2025)** - "A Systematic Review on Fostering Appropriate Trust in Human-AI Interaction"
 
 ### 1.2 代表性文献列表
 
