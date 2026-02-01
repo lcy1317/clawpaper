@@ -275,57 +275,6 @@
       }
     },
     {
-      "id": "sbom_supply_chain_2025",
-      "title": "Software Bill of Materials in Software Supply Chain Security: A Systematic Literature Review",
-      "authors": [
-        "M. Xia",
-        "S. Stol",
-        "R. Abdalkareem"
-      ],
-      "year": 2025,
-      "venue": "arXiv",
-      "institution": "arXiv",
-      "file": null,
-      "size": "N/A",
-      "abstract": "系统综述SBOM在软件供应链安全中的应用，分析生成工具、数据隐私、格式标准化、共享分发等障碍，将障碍映射到ISO/IEC 25019:2023质量模型。",
-      "key_contributions": [
-        "SBOM障碍分析",
-        "ISO/IEC 25019映射",
-        "信任度不足识别"
-      ],
-      "trust_dimensions": {
-        "sbom_trustworthiness": "SBOM可信度",
-        "usability": "可用性",
-        "suitability": "适用性",
-        "security_tasks": "安全任务适合性"
-      },
-      "evaluation_method": {
-        "approach": "系统文献综述",
-        "metrics": [
-          "障碍识别率",
-          "标准化程度",
-          "信任度评分"
-        ],
-        "framework": "ISO/IEC 25019质量模型"
-      },
-      "bibtex": "@article{xia2025sbom, author={Xia, M. and Stol, S. and Abdalkareem, R.}, title={Software Bill of Materials in Software Supply Chain Security: A Systematic Literature Review}, journal={arXiv preprint arXiv:2506.03507}, year={2025} }",
-      "tags": [
-        "SBOM",
-        "软件供应链",
-        "系统综述"
-      ],
-      "journal_info": {
-        "type": "预印本",
-        "ranking": "N/A",
-        "publisher": "arXiv",
-        "access_url": "https://arxiv.org/abs/2506.03507",
-        "doi": "N/A",
-        "impact_factor": "N/A",
-        "impact_factor_label": "arXiv",
-        "notes": "全面SBOM综述研究"
-      }
-    },
-    {
       "id": "sbom_integrity_2025",
       "title": "Supply Chain Insecurity: The Lack of Integrity Protection in SBOM Solutions",
       "authors": [
@@ -373,55 +322,6 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "SBOM安全性深度分析"
-      }
-    },
-    {
-      "id": "zero_trust_survey_2025",
-      "title": "Zero Trust Architecture: A Systematic Literature Review",
-      "authors": [
-        "E. B. Fernandez",
-        "A. Brazhuk"
-      ],
-      "year": 2025,
-      "venue": "arXiv",
-      "institution": "arXiv",
-      "file": null,
-      "size": "N/A",
-      "abstract": "系统综述零信任架构的研究现状，分析基于属性的加密和区块链技术实现互认证，讨论持续监控和动态信任评估机制。",
-      "key_contributions": [
-        "ZTA框架分类",
-        "属性加密方案",
-        "区块链互认证"
-      ],
-      "trust_dimensions": {
-        "mutual_authentication": "相互认证",
-        "continuous_verification": "持续验证",
-        "least_privilege": "最小权限",
-        "micro_segmentation": "微隔离"
-      },
-      "evaluation_method": {
-        "approach": "系统文献综述",
-        "metrics": [
-          "框架覆盖率",
-          "实施成熟度"
-        ],
-        "framework": "NIST ZTA框架"
-      },
-      "bibtex": "@article{fernandez2025zerotrust, author={Fernandez, E.B. and Brazhuk, A.}, title={Zero Trust Architecture: A Systematic Literature Review}, journal={arXiv preprint arXiv:2503.11659}, year={2025} }",
-      "tags": [
-        "零信任",
-        "架构综述",
-        "区块链"
-      ],
-      "journal_info": {
-        "type": "预印本",
-        "ranking": "N/A",
-        "publisher": "arXiv",
-        "access_url": "https://arxiv.org/html/2503.11659v2",
-        "doi": "N/A",
-        "impact_factor": "N/A",
-        "impact_factor_label": "arXiv",
-        "notes": "NIST ZTA框架综述"
       }
     },
     {
@@ -768,54 +668,6 @@
       }
     },
     {
-      "id": "cloud_marketplace_trust_2025",
-      "title": "Secure Cloud-Marketplaces: A Trust Framework for Evaluating Security for Client Service Providers",
-      "authors": [
-        "Q. N. Research Team"
-      ],
-      "year": 2025,
-      "venue": "ResearchGate",
-      "institution": "ResearchGate",
-      "file": null,
-      "size": "N/A",
-      "abstract": "提出云市场安全信任框架，使用Seguno模糊技术评估云提供商的可信度，基于可扩展性、可用性、安全性和可用性四个标准。",
-      "key_contributions": [
-        "云市场信任框架",
-        "模糊技术应用",
-        "四标准评估"
-      ],
-      "trust_dimensions": {
-        "scalability": "可扩展性",
-        "availability": "可用性",
-        "security": "安全性",
-        "usability": "可用性"
-      },
-      "evaluation_method": {
-        "approach": "模糊综合评价",
-        "metrics": [
-          "信任度评分",
-          "标准符合度"
-        ],
-        "framework": "Seguno模糊框架"
-      },
-      "bibtex": "@article{cloudmarket2025trust, author={Research Team}, title={Secure Cloud-Marketplaces: A Trust Framework for Evaluating Security for Client Service Providers}, journal={ResearchGate}, year={2025} }",
-      "tags": [
-        "云市场",
-        "信任框架",
-        "模糊逻辑"
-      ],
-      "journal_info": {
-        "type": "研究论文",
-        "ranking": "N/A",
-        "publisher": "ResearchGate",
-        "access_url": "https://www.researchgate.net/publication/390872617",
-        "doi": "N/A",
-        "impact_factor": "N/A",
-        "impact_factor_label": "ResearchGate",
-        "notes": "云市场安全研究"
-      }
-    },
-    {
       "id": "collaborative_cloud_trust_2025",
       "title": "A Trust Computation Model for Collaborative Cloud Environment",
       "authors": [
@@ -861,47 +713,6 @@
         "impact_factor": "N/A",
         "impact_factor_label": "EI检索",
         "notes": "计算机科学会议论文"
-      }
-    },
-    {
-      "id": "ai_trustworthiness_survey_2024",
-      "title": "Evaluating Trustworthiness in AI: Risks, Metrics, and Applications Across Industries",
-      "authors": [
-        "Various"
-      ],
-      "year": 2024,
-      "venue": "Electronics",
-      "institution": "MDPI",
-      "file": null,
-      "size": "N/A",
-      "abstract": "本文探索AI可信度评估的框架和指标，重点关注公平性、透明性、隐私和安全性等关键原则。分析了各行业AI可信度的挑战和解决方案。",
-      "key_contributions": [
-        "AI可信度指标体系",
-        "跨行业应用分析",
-        "风险评估框架"
-      ],
-      "trust_dimensions": {
-        "fairness": "公平性",
-        "transparency": "透明性",
-        "privacy": "隐私",
-        "security": "安全性",
-        "robustness": "鲁棒性"
-      },
-      "bibtex": "@article{ai2024electronics, author={Various}, title={Evaluating Trustworthiness in AI: Risks, Metrics, and Applications}, journal={Electronics}, volume={14}, number={13}, pages={2717}, year={2024}, doi={10.3390/electronics14132717} }",
-      "tags": [
-        "AI可信度",
-        "评估指标",
-        "行业应用"
-      ],
-      "journal_info": {
-        "type": "SCI Q2期刊",
-        "ranking": "SCI Q2",
-        "publisher": "MDPI",
-        "access_url": "https://www.mdpi.com/2079-9292/14/13/2717",
-        "doi": "10.3390/electronics14132717",
-        "impact_factor": 2.6,
-        "impact_factor_label": "IF: 2.6",
-        "notes": "MDPI开放获取期刊"
       }
     },
     {
@@ -1112,11 +923,11 @@
     }
   ],
   "statistics": {
-    "total_papers": 23,
+    "total_papers": 19,
     "sci_q1": 3,
-    "sci_q2": 8,
+    "sci_q2": 7,
     "ccf_a": 1,
-    "other": 11
+    "other": 8
   },
   "generated_at": "2025-02-01T14:00:00Z"
 }
