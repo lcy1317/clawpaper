@@ -94,7 +94,13 @@ HTML_TEMPLATE = """
         .mascot { font-size: 3.5em; margin: 15px 0; animation: bounce 2s infinite; }
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         
-        .stats-bar { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 25px 0; }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
         .stat-card {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -141,7 +147,12 @@ HTML_TEMPLATE = """
         }
         .dimension-select option { background: #1a1a2e; color: #e0e0e0; }
         
-        .papers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 25px; margin-bottom: 30px; }
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
         .paper-card {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -175,12 +186,23 @@ HTML_TEMPLATE = """
             font-size: 0.85em;
             font-weight: 600;
         }
-        .paper-title { color: #fff; font-size: 1.15em; line-height: 1.5; margin-bottom: 12px; padding-right: 70px; }
+        .paper-title {
+            color: #fff;
+            font-size: 1.15em;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            padding-right: 70px;
+        }
         .paper-meta { color: #888; font-size: 0.9em; margin-bottom: 15px; }
         .paper-meta i { margin-right: 5px; color: #667eea; }
         
         .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
-        .badge { padding: 5px 12px; border-radius: 15px; font-size: 0.75em; font-weight: 500; }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
         .badge-q1 { background: linear-gradient(135deg, #00b894, #00cec9); color: #000; }
         .badge-q2 { background: linear-gradient(135deg, #fdcb6e, #f39c12); color: #000; }
         .badge-ei { background: linear-gradient(135deg, #e17055, #d63031); color: #fff; }
@@ -188,19 +210,64 @@ HTML_TEMPLATE = """
         .badge-if { background: linear-gradient(135deg, #00b894, #55efc4); color: #000; }
         .badge-publisher { background: rgba(255, 255, 255, 0.1); color: #a0a0a0; }
         
-        .paper-abstract { background: rgba(0, 0, 0, 0.2); border-radius: 12px; padding: 15px; margin-bottom: 15px; font-size: 0.9em; line-height: 1.7; color: #b0b0b0; }
+        .paper-abstract {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            line-height: 1.7;
+            color: #b0b0b0;
+        }
         
-        .dimensions-preview { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px; }
-        .dimension-tag { background: rgba(102, 126, 234, 0.2); border: 1px solid rgba(102, 126, 234, 0.3); padding: 4px 10px; border-radius: 12px; font-size: 0.75em; color: #667eea; }
+        .dimensions-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+        .dimension-tag {
+            background: rgba(102, 126, 234, 0.2);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            color: #667eea;
+        }
         
         .action-btns { display: flex; gap: 10px; flex-wrap: wrap; }
-        .btn { flex: 1; padding: 10px 15px; border-radius: 25px; text-decoration: none; font-weight: 500; text-align: center; border: none; transition: all 0.3s ease; min-width: 100px; font-size: 0.9em; cursor: pointer; }
+        .btn {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
         .btn-download { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
         .btn-access { background: linear-gradient(135deg, #00b894, #00cec9); color: #000; }
         .btn-detail { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
         .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
         
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(5px); }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
         .modal.active { display: flex; }
         .modal-content {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -212,33 +279,96 @@ HTML_TEMPLATE = """
             overflow-y: auto;
             padding: 35px;
         }
-        .modal-close { float: right; font-size: 1.8em; cursor: pointer; color: #666; transition: color 0.3s; }
+        .modal-close {
+            float: right;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
         .modal-close:hover { color: #fff; }
         
         .modal-title { color: #fff; font-size: 1.4em; margin-bottom: 20px; line-height: 1.4; }
         .modal-meta { color: #888; margin-bottom: 20px; line-height: 1.8; }
         .modal-meta i { color: #667eea; margin-right: 8px; }
         
-        .dimensions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 20px 0; }
-        .dimension-card { background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%); border: 1px solid rgba(102, 126, 234, 0.2); border-radius: 12px; padding: 15px; }
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .dimension-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+        }
         .dimension-key { color: #667eea; font-weight: 600; font-size: 0.9em; margin-bottom: 5px; }
         .dimension-value { color: #b0b0b0; font-size: 0.85em; }
         
-        .bibtex-section { background: #1e1e1e; border-radius: 16px; padding: 20px; margin-top: 20px; }
+        .bibtex-section {
+            background: #1e1e1e;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+        }
         .bibtex-section h4 { color: #61dafb; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .bibtex-code { background: #121212; border-radius: 10px; padding: 15px; color: #abb2bf; font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.8em; overflow-x: auto; white-space: pre-wrap; word-break: break-all; line-height: 1.6; }
-        .copy-btn { background: #61dafb; color: #1e1e1e; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: 600; margin-top: 15px; transition: all 0.3s; }
+        .bibtex-code {
+            background: #121212;
+            border-radius: 10px;
+            padding: 15px;
+            color: #abb2bf;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.8em;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+            line-height: 1.6;
+        }
+        .copy-btn {
+            background: #61dafb;
+            color: #1e1e1e;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
         .copy-btn:hover { background: #4fa8d1; }
         
-        .summary-card { background: linear-gradient(135deg, rgba(255, 202, 58, 0.1) 0%, rgba(255, 112, 67, 0.1) 100%); border: 1px solid rgba(255, 202, 58, 0.2); border-radius: 20px; padding: 30px; margin-bottom: 30px; }
+        .summary-card {
+            background: linear-gradient(135deg, rgba(255, 202, 58, 0.1) 0%, rgba(255, 112, 67, 0.1) 100%);
+            border: 1px solid rgba(255, 202, 58, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
         .summary-card h2 { color: #ffca28; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .summary-content { background: rgba(0, 0, 0, 0.2); border-radius: 15px; padding: 25px; line-height: 1.9; color: #d0d0d0; white-space: pre-wrap; }
+        .summary-content {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            line-height: 1.9;
+            color: #d0d0d0;
+            white-space: pre-wrap;
+        }
         
-        .footer { text-align: center; padding: 40px; color: #666; }
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
         .footer .heart { color: #ff6b6b; animation: heartbeat 1s infinite; display: inline-block; }
         @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
         
-        .no-results { text-align: center; padding: 60px 20px; color: #666; }
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
         .no-results i { font-size: 4em; margin-bottom: 20px; color: #444; }
         
         @media (max-width: 768px) {
@@ -257,11 +387,26 @@ HTML_TEMPLATE = """
             <p class="subtitle">🌸 信任度评估系统专题 - 学术文献资源库 💕</p>
             
             <div class="stats-bar">
-                <div class="stat-card"><div class="stat-number">PAPERS_COUNT</div><div class="stat-label">📚 总文献数</div></div>
-                <div class="stat-card"><div class="stat-number">STATS_Q1</div><div class="stat-label">🟢 SCI Q1</div></div>
-                <div class="stat-card"><div class="stat-number">STATS_Q2</div><div class="stat-label">🟠 SCI Q2</div></div>
-                <div class="stat-card"><div class="stat-number">STATS_EI</div><div class="stat-label">🔴 EI 会议</div></div>
-                <div class="stat-card"><div class="stat-number">DIM_COUNT</div><div class="stat-label">🎯 信任维度</div></div>
+                <div class="stat-card">
+                    <div class="stat-number">PAPERS_COUNT</div>
+                    <div class="stat-label">📚 总文献数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">STATS_Q1</div>
+                    <div class="stat-label">🟢 SCI Q1</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">STATS_Q2</div>
+                    <div class="stat-label">🟠 SCI Q2</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">STATS_EI</div>
+                    <div class="stat-label">🔴 EI 会议</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">DIM_COUNT</div>
+                    <div class="stat-label">🎯 信任维度</div>
+                </div>
             </div>
         </header>
         
@@ -285,7 +430,9 @@ HTML_TEMPLATE = """
             </div>
         </section>
         
-        <h2 style="color: #fff; margin-bottom: 25px; text-align: center;"><i class="fas fa-book-open" style="color: #667eea;"></i> 学术文献</h2>
+        <h2 style="color: #fff; margin-bottom: 25px; text-align: center;">
+            <i class="fas fa-book-open" style="color: #667eea;"></i> 学术文献
+        </h2>
         
         <div class="papers-grid" id="papersGrid">PAPERS_HTML</div>
         
@@ -303,7 +450,10 @@ HTML_TEMPLATE = """
     </div>
     
     <div class="modal" id="paperModal">
-        <div class="modal-content"><span class="modal-close" onclick="closeModal()">&times;</span><div id="modalBody"></div></div>
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
     </div>
     
     <script>
@@ -318,23 +468,24 @@ HTML_TEMPLATE = """
             let journalInfoHtml = '';
             if (paper.journal_info) {
                 const journal = paper.journal_info;
-                journalInfoHtml = '<div class="badges" style="margin: 15px 0;">' +
-                    '<span class="badge badge-' + (journal.ranking || 'na').toLowerCase().replace(/\\s+/g, '-') + '">' + (journal.ranking || 'N/A') + '</span>' +
-                    '<span class="badge badge-publisher">' + (journal.publisher || 'N/A') + '</span>' +
-                    (journal.impact_factor_label ? '<span class="badge badge-if">' + journal.impact_factor_label + '</span>' : '') +
-                    '</div>' +
-                    (journal.access_url ? '<p><i class="fas fa-link"></i> <a href="' + journal.access_url + '" target="_blank" style="color: #667eea;">访问原文</a></p>' : '') +
-                    (journal.doi ? '<p><i class="fas fa-fingerprint"></i> DOI: ' + journal.doi + '</p>' : '') +
-                    (journal.notes ? '<p style="color: #888; font-size: 0.9em;"><i class="fas fa-info-circle"></i> ' + journal.notes + '</p>' : '');
+                journalInfoHtml = `
+                    <div class="badges" style="margin: 15px 0;">
+                        <span class="badge badge-${(journal.ranking || '').toLowerCase().replace(' ', '-')}">${journal.ranking || 'N/A'}</span>
+                        <span class="badge badge-publisher">${journal.publisher || 'N/A'}</span>
+                        ${journal.impact_factor_label ? '<span class="badge badge-if">' + journal.impact_factor_label + '</span>' : ''}
+                    </div>
+                    ${journal.access_url ? '<p><i class="fas fa-link"></i> <a href="' + journal.access_url + '" target="_blank" style="color: #667eea;">访问原文</a></p>' : ''}
+                    ${journal.doi ? '<p><i class="fas fa-fingerprint"></i> DOI: ' + journal.doi + '</p>' : ''}
+                    ${journal.notes ? '<p style="color: #888; font-size: 0.9em;"><i class="fas fa-info-circle"></i> ' + journal.notes + '</p>' : ''}
+                `;
             }
             
             let dimensionsHtml = '';
             if (paper.trust_dimensions) {
-                let dimsHtml = '';
-                for (const [key, value] of Object.entries(paper.trust_dimensions)) {
-                    dimsHtml += '<div class="dimension-card"><div class="dimension-key">' + key + '</div><div class="dimension-value">' + value + '</div></div>';
-                }
-                dimensionsHtml = '<h4 style="color: #667eea; margin: 20px 0 15px;"><i class="fas fa-cube"></i> 信任维度分析</h4><div class="dimensions-grid">' + dimsHtml + '</div>';
+                const dims = Object.entries(paper.trust_dimensions).map(([k, v]) => 
+                    '<div class="dimension-card"><div class="dimension-key">' + k + '</div><div class="dimension-value">' + v + '</div></div>'
+                ).join('');
+                dimensionsHtml = '<h4 style="color: #667eea; margin: 20px 0 15px;"><i class="fas fa-cube"></i> 信任维度分析</h4><div class="dimensions-grid">' + dims + '</div>';
             }
             
             document.getElementById('modalBody').innerHTML = 
@@ -361,21 +512,20 @@ HTML_TEMPLATE = """
         }
         
         function sortAndFilterPapers() {
-            let filtered = allPapers;
-            if (currentDimension) {
-                filtered = allPapers.filter(p => p.trust_dimensions && Object.keys(p.trust_dimensions).some(k => k.toLowerCase().includes(currentDimension.toLowerCase())));
-            }
+            let filtered = currentDimension ? 
+                allPapers.filter(p => p.trust_dimensions && Object.keys(p.trust_dimensions).some(k => k.toLowerCase().includes(currentDimension.toLowerCase()))) :
+                [...allPapers];
             
             filtered.sort((a, b) => {
                 if (currentSort === 'default') return 0;
                 if (currentSort === 'if_desc') {
-                    const aIf = (a.journal_info && a.journal_info.impact_factor) || 0;
-                    const bIf = (b.journal_info && b.journal_info.impact_factor) || 0;
+                    const aIf = a.journal_info?.impact_factor || 0;
+                    const bIf = b.journal_info?.impact_factor || 0;
                     return bIf - aIf;
                 }
                 if (currentSort === 'if_asc') {
-                    const aIf = (a.journal_info && a.journal_info.impact_factor) || 0;
-                    const bIf = (b.journal_info && b.journal_info.impact_factor) || 0;
+                    const aIf = a.journal_info?.impact_factor || 0;
+                    const bIf = b.journal_info?.impact_factor || 0;
                     return aIf - bIf;
                 }
                 if (currentSort === 'year_desc') return b.year - a.year;
@@ -401,7 +551,7 @@ HTML_TEMPLATE = """
                 const journal = paper.journal_info || {};
                 const ranking = journal.ranking || '';
                 const impact = journal.impact_factor || 0;
-                const rankingClass = ranking.toLowerCase().replace(/\\s+/g, '-');
+                const rankingClass = ranking.toLowerCase().replace(' ', '-');
                 
                 let btnDownload = '';
                 if (paper.file) {
@@ -415,10 +565,12 @@ HTML_TEMPLATE = """
                 
                 let dimensionsPreview = '';
                 if (paper.trust_dimensions) {
-                    const dims = Object.keys(paper.trust_dimensions);
-                    const dimTags = dims.slice(0, 4).map(k => '<span class="dimension-tag">' + k + '</span>').join('');
-                    const more = dims.length > 4 ? '<span class="dimension-tag">+更多</span>' : '';
-                    dimensionsPreview = '<div class="dimensions-preview">' + dimTags + more + '</div>';
+                    dimensionsPreview = '<div class="dimensions-preview">' + 
+                        Object.entries(paper.trust_dimensions).slice(0, 4).map(([k, v]) => 
+                            '<span class="dimension-tag">' + k + '</span>'
+                        ).join('') +
+                        (Object.keys(paper.trust_dimensions).length > 4 ? '<span class="dimension-tag">+更多</span>' : '') +
+                        '</div>';
                 }
                 
                 let badges = '<span class="badge badge-' + rankingClass + '">' + ranking + '</span>';
@@ -427,14 +579,24 @@ HTML_TEMPLATE = """
                 }
                 badges += '<span class="badge badge-publisher">' + (journal.publisher || paper.institution) + '</span>';
                 
-                return '<article class="paper-card" data-ranking="' + ranking + '" data-if="' + impact + '" data-year="' + paper.year + '">' +
-                    '<span class="paper-year-badge">' + paper.year + '</span>' +
-                    '<h3 class="paper-title">' + paper.title + '</h3>' +
-                    '<div class="paper-meta"><i class="fas fa-user"></i> ' + paper.authors.join(', ') + '<br><i class="fas fa-university"></i> ' + paper.institution + '</div>' +
-                    '<div class="badges">' + badges + '</div>' +
-                    '<div class="paper-abstract">' + paper.abstract.substring(0, 150) + '...</div>' +
-                    dimensionsPreview +
-                    '<div class="action-btns">' + btnDownload + btnAccess + '<button class="btn btn-detail" onclick="showModal(\\'' + paper.id + '\\')"><i class="fas fa-info-circle"></i> 详情</button></div></article>';
+                return `
+                    <article class="paper-card" data-ranking="${ranking}" data-if="${impact}" data-year="${paper.year}">
+                        <span class="paper-year-badge">${paper.year}</span>
+                        <h3 class="paper-title">${paper.title}</h3>
+                        <div class="paper-meta">
+                            <i class="fas fa-user"></i> ${paper.authors.join(', ')}<br>
+                            <i class="fas fa-university"></i> ${paper.institution}
+                        </div>
+                        <div class="badges">${badges}</div>
+                        <div class="paper-abstract">${paper.abstract.substring(0, 150)}...</div>
+                        ${dimensionsPreview}
+                        <div class="action-btns">
+                            ${btnDownload}
+                            ${btnAccess}
+                            <button class="btn btn-detail" onclick="showModal('${paper.id}')"><i class="fas fa-info-circle"></i> 详情</button>
+                        </div>
+                    </article>
+                `;
             }).join('');
         }
         
@@ -459,11 +621,22 @@ HTML_TEMPLATE = """
 """
 
 def generate_papers_html(papers):
-    return "PLACEHOLDER"
+    html_parts = []
+    for paper in papers:
+        journal_info = paper.get('journal_info', {})
+        ranking = journal_info.get('ranking', '') if journal_info else ''
+        impact = journal_info.get('impact_factor', 0) if journal_info else 0
+        publisher = journal_info.get('publisher', '') if journal_info else paper.get('institution', '')
+        
+        card_html = 'PAPER_CARD_PLACEHOLDER'
+        html_parts.append(card_html)
+    return 'PLACEHOLDER_REPLACE'
 
 @app.route('/')
 def index():
     html = HTML_TEMPLATE
+    
+    # 统计
     html = html.replace('PAPERS_COUNT', str(len(PAPERS_DATA)))
     html = html.replace('STATS_Q1', str(STATS.get('sci_q1', 0)))
     html = html.replace('STATS_Q2', str(STATS.get('sci_q2', 0)))
@@ -486,7 +659,7 @@ def index():
         ranking = journal_info.get('ranking', '') if journal_info else ''
         impact = journal_info.get('impact_factor', 0) if journal_info else 0
         access_url = journal_info.get('access_url', '') if journal_info else ''
-        publisher = journal_info.get('publisher', '') if journal_info else paper.get('institution', '')
+        ranking_class = ranking.lowerCase().replace(' ', '-') if ranking else ''
         
         btn_download = ''
         if paper.get('file'):
@@ -498,27 +671,33 @@ def index():
         
         dimensions_preview = ''
         if paper.get('trust_dimensions'):
-            dims = list(paper['trust_dimensions'].keys())
-            dim_tags = ''.join(['<span class="dimension-tag">' + k + '</span>' for k in dims[:4]])
-            more = '<span class="dimension-tag">+更多</span>' if len(dims) > 4 else ''
-            dimensions_preview = '<div class="dimensions-preview">' + dim_tags + more + '</div>'
+            dims = Object.keys(paper['trust_dimensions']).slice(0, 4).map(k => '<span class="dimension-tag">' + k + '</span>').join('')
+            more = '+更多' if len(paper['trust_dimensions']) > 4 else ''
+            dimensions_preview = '<div class="dimensions-preview">' + dims + more + '</div>'
         
-        ranking_class = ranking.lower().replace(' ', '-') if ranking else 'na'
         badges = '<span class="badge badge-' + ranking_class + '">' + ranking + '</span>'
         if journal_info.get('impact_factor_label'):
             badges += '<span class="badge badge-if">' + journal_info['impact_factor_label'] + '</span>'
         badges += '<span class="badge badge-publisher">' + publisher + '</span>'
         
-        card = '''<article class="paper-card" data-ranking="RANKING" data-if="IMPACT" data-year="YEAR">
-            <span class="paper-year-badge">YEAR</span>
-            <h3 class="paper-title">TITLE</h3>
-            <div class="paper-meta"><i class="fas fa-user"></i> AUTHORS<br><i class="fas fa-university"></i> INSTITUTION</div>
-            <div class="badges">BADGES</div>
-            <div class="paper-abstract">ABSTRACT...</div>
-            DIMENSIONS_PREVIEW
-            <div class="action-btns">BTN_DOWNLOAD BTN_ACCESS <button class="btn btn-detail" onclick="showModal('ID')"><i class="fas fa-info-circle"></i> 详情</button></div>
-        </article>'''
-        
+        card = '''
+            <article class="paper-card" data-ranking="RANKING" data-if="IMPACT" data-year="YEAR">
+                <span class="paper-year-badge">YEAR</span>
+                <h3 class="paper-title">TITLE</h3>
+                <div class="paper-meta">
+                    <i class="fas fa-user"></i> AUTHORS<br>
+                    <i class="fas fa-university"></i> INSTITUTION
+                </div>
+                <div class="badges">BADGES</div>
+                <div class="paper-abstract">ABSTRACT...</div>
+                DIMENSIONS_PREVIEW
+                <div class="action-btns">
+                    BTN_DOWNLOAD
+                    BTN_ACCESS
+                    <button class="btn btn-detail" onclick="showModal('ID')"><i class="fas fa-info-circle"></i> 详情</button>
+                </div>
+            </article>
+        '''
         card = card.replace('TITLE', paper['title'])\
                    .replace('AUTHORS', ', '.join(paper['authors']))\
                    .replace('INSTITUTION', paper['institution'])\
