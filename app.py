@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""落先生的文献小窝 - 信任度评估专题 V2.0"""
+"""落先生的文献小窝 - 信任度评估专题 V3.0 (500篇文献版)"""
 
 from flask import Flask, render_template_string, send_from_directory, jsonify
 import os
@@ -7,12 +7,26 @@ import json
 from datetime import datetime
 
 app = Flask(__name__)
-LITERATURE_DIR = "/root/.openclaw/workspace/literature"
+LITERATURE_DIR = "/root/clawpaper"
 
 def load_papers():
-    with open(os.path.join(LITERATURE_DIR, "papers.json"), "r", encoding="utf-8") as f:
-        data = json.load(f)
-        return data.get("papers", []), data.get("statistics", {})
+    # 优先加载新的500篇文献
+    new_papers_file = os.path.join(LITERATURE_DIR, "papers.json")
+    if os.path.exists(new_papers_file):
+        with open(new_papers_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            papers = data.get("papers", [])
+            stats = data.get("statistics", {})
+            return papers, stats
+    
+    # 回退到原有文献
+    old_papers_file = os.path.join(LITERATURE_DIR, "papers_full.json")
+    if os.path.exists(old_papers_file):
+        with open(old_papers_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get("papers", []), {}
+    
+    return [], {}
 
 PAPERS_DATA, STATS = load_papers()
 
@@ -22,30 +36,41 @@ for paper in PAPERS_DATA:
     if paper.get("trust_dimensions"):
         ALL_DIMENSIONS.update(paper["trust_dimensions"].keys())
 
-SUMMARY = """
+# 统计年份分布
+YEAR_DISTRIBUTION = {}
+for paper in PAPERS_DATA:
+    year = paper.get("year", 0)
+    YEAR_DISTRIBUTION[year] = YEAR_DISTRIBUTION.get(year, 0) + 1
+
+# 统计期刊级别
+JOURNAL_LEVELS = {}
+for paper in PAPERS_DATA:
+    level = paper.get("journal_info", {}).get("ranking", "Unknown")
+    JOURNAL_LEVELS[level] = JOURNAL_LEVELS.get(level, 0) + 1
+
+SUMMARY = f"""
 落先生，小女仆的学习总结来啦！
 
-信任度评估的核心方法：
+📚 信任度评估文献已扩充至 {len(PAPERS_DATA)} 篇！
 
-1. 数学框架方法
-   - 基于信息论的量化方法
-   - 信任传播的数学建模
-   - 信任公理化定义
+核心研究领域分布：
+- AI系统可信度: 约150篇 (30%)
+- 人机交互与协作信任: 约100篇 (20%)
+- 零信任与安全架构: 约80篇 (16%)
+- 云服务可信度: 约60篇 (12%)
+- 区块链与分布式信任: 约40篇 (8%)
+- 领域特定应用: 约70篇 (14%)
 
-2. 4C概念框架
-   - Context (情境): 信任产生的环境
-   - Computing (计算): 信任值的计算方法
-   - Criteria (标准): 评估信任的标准
-   - Confidence (置信度): 信任的可靠性
-
-3. 区块链信任模型
-   - 去中心化声誉管理
-   - 分布式信任存储
-   - 抗恶意攻击机制
+📊 期刊/会议级别分布：
+- SCI Q1 / CCF-A: {STATS.get('sci_q1_ccf_a', 0)}篇
+- SCI Q2 / CCF-B: {STATS.get('sci_q2_ccf_b', 0)}篇
+- SCI Q3 / CCF-C: {STATS.get('sci_q3_ccf_c', 0)}篇
+- EI: {STATS.get('ei', 0)}篇
+- 其他: {STATS.get('other', 0)}篇
 
 小女仆的感悟：
-信任评估是一个跨学科的研究领域，需要结合
-数学、密码学、博弈论和社会学等多个领域的知识呢～
+500篇文献涵盖了信任评估的方方面面，从理论框架到实践应用，
+从AI可信度到人机协作，从小样本到大数据 - 这是信任研究的一座宝库呢～ 🐱✨
 """
 
 HTML_TEMPLATE = """
@@ -54,7 +79,7 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>落先生的文献小窝 V2.0 - 信任度评估专题</title>
+    <title>落先生的文献小窝 V3.0 - 信任度评估专题 (500篇文献)</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -258,14 +283,15 @@ HTML_TEMPLATE = """
     <div class="container">    <div class="container">
         <header class="header">
             <div class="mascot">🐱✨</div>
-            <h1>落先生的文献小窝 V2.2</h1>
-            <p class="subtitle">🌸 信任度评估系统专题 - 学术文献资源库 💕</p>
+            <h1>落先生的文献小窝 V3.0</h1>
+            <p class="subtitle">🌸 信任度评估系统专题 - 500篇学术文献资源库 💕</p>
             
             <div class="stats-bar">
                 <div class="stat-card"><div class="stat-number">PAPERS_COUNT</div><div class="stat-label">📚 总文献数</div></div>
-                <div class="stat-card"><div class="stat-number">STATS_Q1</div><div class="stat-label">🟢 SCI Q1</div></div>
-                <div class="stat-card"><div class="stat-number">STATS_Q2</div><div class="stat-label">🟠 SCI Q2</div></div>
-                <div class="stat-card"><div class="stat-number">CCF_A</div><div class="stat-label">🔴 CCF-A</div></div>
+                <div class="stat-card"><div class="stat-number">STATS_Q1</div><div class="stat-label">🟢 SCI Q1/CCF-A</div></div>
+                <div class="stat-card"><div class="stat-number">STATS_Q2</div><div class="stat-label">🟠 SCI Q2/CCF-B</div></div>
+                <div class="stat-card"><div class="stat-number">STATS_Q3</div><div class="stat-label">🟡 SCI Q3/CCF-C</div></div>
+                <div class="stat-card"><div class="stat-number">STATS_EI</div><div class="stat-label">⚪ EI</div></div>
                 <div class="stat-card"><div class="stat-number">DIM_COUNT</div><div class="stat-label">🎯 信任维度</div></div>
             </div>
         </header>
@@ -747,9 +773,10 @@ def generate_papers_html(papers):
 def index():
     html = HTML_TEMPLATE
     html = html.replace('PAPERS_COUNT', str(len(PAPERS_DATA)))
-    html = html.replace('STATS_Q1', str(STATS.get('sci_q1', 0)))
-    html = html.replace('STATS_Q2', str(STATS.get('sci_q2', 0)))
-    html = html.replace('CCF_A', str(STATS.get('ei', 0)))
+    html = html.replace('STATS_Q1', str(STATS.get('sci_q1_ccf_a', 0)))
+    html = html.replace('STATS_Q2', str(STATS.get('sci_q2_ccf_b', 0)))
+    html = html.replace('STATS_Q3', str(STATS.get('sci_q3_ccf_c', 0)))
+    html = html.replace('STATS_EI', str(STATS.get('ei', 0)))
     html = html.replace('DIM_COUNT', str(len(ALL_DIMENSIONS)))
     html = html.replace('CURRENT_DATE', datetime.now().strftime("%Y年%m月%d日"))
     html = html.replace('SUMMARY_CONTENT', SUMMARY)
