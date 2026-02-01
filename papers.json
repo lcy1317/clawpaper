@@ -68,8 +68,7 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "综合综述，覆盖欧盟AI Act要求"
-      },
-      "cover_image": "img/trustworthy_ai_overview_2024.png"
+      }
     },
     {
       "id": "ai_trustworthiness_tram_2025",
@@ -120,8 +119,7 @@
         "impact_factor": 8.9,
         "impact_factor_label": "IF: 8.9",
         "notes": "人类行为计算领域顶级期刊"
-      },
-      "cover_image": "img/ai_trustworthiness_tram_2025.png"
+      }
     },
     {
       "id": "zero_trust_cloud_2025",
@@ -173,8 +171,7 @@
         "impact_factor": 4.2,
         "impact_factor_label": "IF: 4.2",
         "notes": "网络安全领域重要期刊"
-      },
-      "cover_image": "img/zero_trust_cloud_2025.png"
+      }
     },
     {
       "id": "cloud_service_reputation_2025",
@@ -225,8 +222,7 @@
         "impact_factor": 3.8,
         "impact_factor_label": "IF: 3.8",
         "notes": "计算期刊"
-      },
-      "cover_image": "img/cloud_service_reputation_2025.png"
+      }
     },
     {
       "id": "cloud_credibility_entropy_2025",
@@ -276,8 +272,7 @@
         "impact_factor": 4.6,
         "impact_factor_label": "IF: 4.6",
         "notes": "Nature系列期刊"
-      },
-      "cover_image": "img/cloud_credibility_entropy_2025.png"
+      }
     },
     {
       "id": "sbom_supply_chain_2025",
@@ -328,8 +323,7 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "全面SBOM综述研究"
-      },
-      "cover_image": "img/sbom_supply_chain_2025.png"
+      }
     },
     {
       "id": "sbom_integrity_2025",
@@ -379,8 +373,7 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "SBOM安全性深度分析"
-      },
-      "cover_image": "img/sbom_integrity_2025.png"
+      }
     },
     {
       "id": "zero_trust_survey_2025",
@@ -429,8 +422,7 @@
         "impact_factor": "N/A",
         "impact_factor_label": "arXiv",
         "notes": "NIST ZTA框架综述"
-      },
-      "cover_image": "img/zero_trust_survey_2025.png"
+      }
     },
     {
       "id": "zero_trust_cloud_2025_access",
@@ -480,8 +472,7 @@
         "impact_factor": 2.7,
         "impact_factor_label": "IF: 2.7",
         "notes": "对称期刊"
-      },
-      "cover_image": "img/zero_trust_cloud_2025_access.png"
+      }
     },
     {
       "id": "ai_evaluation_risks_2025",
@@ -530,8 +521,7 @@
         "impact_factor": 2.6,
         "impact_factor_label": "IF: 2.6",
         "notes": "电子学期刊"
-      },
-      "cover_image": "img/ai_evaluation_risks_2025.png"
+      }
     },
     {
       "id": "trust_ai_scale_2025",
@@ -580,8 +570,7 @@
         "impact_factor": 3.5,
         "impact_factor_label": "IF: 3.5",
         "notes": "人工智能前沿"
-      },
-      "cover_image": "img/trust_ai_scale_2025.png"
+      }
     },
     {
       "id": "trust_distrust_xai_2025",
@@ -631,8 +620,7 @@
         "impact_factor": "N/A",
         "impact_factor_label": "EI检索",
         "notes": "XAI智能系统期刊"
-      },
-      "cover_image": "img/trust_distrust_xai_2025.png"
+      }
     },
     {
       "id": "ai_decoding_trust_2025",
@@ -682,8 +670,7 @@
         "impact_factor": 2.4,
         "impact_factor_label": "IF: 2.4",
         "notes": "信息学期刊"
-      },
-      "cover_image": "img/ai_decoding_trust_2025.png"
+      }
     },
     {
       "id": "public_trust_ai_2025",
@@ -730,8 +717,7 @@
         "impact_factor": 4.6,
         "impact_factor_label": "IF: 4.6",
         "notes": "Nature系列期刊"
-      },
-      "cover_image": "img/public_trust_ai_2025.png"
+      }
     },
     {
       "id": "cloud_iot_credibility_2025",
@@ -779,8 +765,7 @@
         "impact_factor": 2.1,
         "impact_factor_label": "IF: 2.1",
         "notes": "国际信息技术期刊"
-      },
-      "cover_image": "img/cloud_iot_credibility_2025.png"
+      }
     },
     {
       "id": "cloud_marketplace_trust_2025",
@@ -828,8 +813,7 @@
         "impact_factor": "N/A",
         "impact_factor_label": "ResearchGate",
         "notes": "云市场安全研究"
-      },
-      "cover_image": "img/cloud_marketplace_trust_2025.png"
+      }
     },
     {
       "id": "collaborative_cloud_trust_2025",
@@ -877,8 +861,7 @@
         "impact_factor": "N/A",
         "impact_factor_label": "EI检索",
         "notes": "计算机科学会议论文"
-      },
-      "cover_image": "img/collaborative_cloud_trust_2025.png"
+      }
     },
     {
       "id": "ai_trustworthiness_survey_2024",
@@ -919,8 +902,7 @@
         "impact_factor": 2.6,
         "impact_factor_label": "IF: 2.6",
         "notes": "MDPI开放获取期刊"
-      },
-      "cover_image": "img/ai_trustworthiness_survey_2024.png"
+      }
     },
     {
       "id": "cloud_trust_fuzzy_2024",
@@ -962,8 +944,7 @@
         "impact_factor": 4.6,
         "impact_factor_label": "IF: 4.6",
         "notes": "Nature系列期刊"
-      },
-      "cover_image": "img/cloud_trust_fuzzy_2024.png"
+      }
     },
     {
       "id": "cross_cloud_trust_2020",
@@ -1004,8 +985,7 @@
         "impact_factor": 14.8,
         "impact_factor_label": "IF: 14.8",
         "notes": "ACM计算综述顶级期刊"
-      },
-      "cover_image": "img/cross_cloud_trust_2020.png"
+      }
     },
     {
       "id": "cwe_ics_2023",
@@ -1046,8 +1026,7 @@
         "impact_factor": 3.4,
         "impact_factor_label": "IF: 3.4",
         "notes": "IEEE安全与隐私期刊"
-      },
-      "cover_image": "img/cwe_ics_2023.png"
+      }
     },
     {
       "id": "ml_data_audit_2024",
@@ -1087,176 +1066,7 @@
         "impact_factor": "N/A",
         "impact_factor_label": "CCS 2024",
         "notes": "ACM计算机与通信安全顶会"
-      },
-      "cover_image": "img/ml_data_audit_2024.png"
-    },
-    {
-      "id": "explainable_ai_sok_2024",
-      "title": "SoK: Explainable Machine Learning in Adversarial Environments",
-      "authors": [
-        "A. Liu",
-        "L. Cheng",
-        "K. Li"
-      ],
-      "year": 2024,
-      "venue": "IEEE S&P",
-      "institution": "IEEE",
-      "file": null,
-      "size": "N/A",
-      "abstract": "本文系统化分析对抗环境中的可解释机器学习。研究解释方法在安全场景下的有效性和局限性。",
-      "key_contributions": [
-        "对抗可解释性分析",
-        "安全场景评估",
-        "方法对比研究"
-      ],
-      "trust_dimensions": {
-        "explainability": "可解释性",
-        "adversarial_robustness": "对抗鲁棒性",
-        "security": "安全性"
-      },
-      "bibtex": "@article{liu2024explainable, author={Liu, A. and Cheng, L. and Li, K.}, title={SoK: Explainable Machine Learning in Adversarial Environments}, journal={IEEE S&P 2024}, pages={1-15}, year={2024}, doi={10.1109/SP.2024.00001} }",
-      "tags": [
-        "可解释AI",
-        "对抗学习",
-        "安全评估"
-      ],
-      "journal_info": {
-        "type": "CCF-A会议",
-        "ranking": "CCF-A",
-        "publisher": "IEEE",
-        "access_url": "https://ieeexplore.ieee.org/document/1234567",
-        "doi": "10.1109/SP.2024.00001",
-        "impact_factor": "N/A",
-        "impact_factor_label": "IEEE S&P 2024",
-        "notes": "IEEE安全与隐私顶会"
-      },
-      "cover_image": "img/explainable_ai_sok_2024.png"
-    },
-    {
-      "id": "zero_trust_survey_2024",
-      "title": "Zero Trust Architecture: A Comprehensive Survey",
-      "authors": [
-        "M. Siddiqi",
-        "S. Ahamed",
-        "J. Lee"
-      ],
-      "year": 2024,
-      "venue": "IEEE Access",
-      "institution": "IEEE",
-      "file": null,
-      "size": "N/A",
-      "abstract": "本文全面综述零信任架构的发展、核心原则和实施挑战。分析信任评估方法和访问控制策略。",
-      "key_contributions": [
-        "零信任架构综述",
-        "实施框架",
-        "信任评估方法"
-      ],
-      "trust_dimensions": {
-        "micro_segmentation": "微分段",
-        "continuous_verification": "持续验证",
-        "least_privilege": "最小权限",
-        "zero_trust": "零信任"
-      },
-      "bibtex": "@article{siddiqi2024zerotrust, author={Siddiqi, M. and Ahamed, S. and Lee, J.}, title={Zero Trust Architecture: A Comprehensive Survey}, journal={IEEE Access}, volume={12}, pages={45678-45699}, year={2024}, doi={10.1109/ACCESS.2024.3456789} }",
-      "tags": [
-        "零信任",
-        "架构",
-        "访问控制"
-      ],
-      "journal_info": {
-        "type": "SCI Q2期刊",
-        "ranking": "SCI Q2",
-        "publisher": "IEEE",
-        "access_url": "https://ieeexplore.ieee.org/document/1234568",
-        "doi": "10.1109/ACCESS.2024.3456789",
-        "impact_factor": 3.9,
-        "impact_factor_label": "IF: 3.9",
-        "notes": "IEEE开放获取期刊"
-      },
-      "cover_image": "img/zero_trust_survey_2024.png"
-    },
-    {
-      "id": "blockchain_trust_2024",
-      "title": "Blockchain-Based Trust Management for IoT: A Survey",
-      "authors": [
-        "R. Zhang",
-        "W. Wang",
-        "H. Liu"
-      ],
-      "year": 2024,
-      "venue": "IEEE IoT J.",
-      "institution": "IEEE",
-      "file": null,
-      "size": "N/A",
-      "abstract": "本文综述基于区块链的物联网信任管理机制。分析去中心化信任模型的优缺点和适用场景。",
-      "key_contributions": [
-        "区块链信任模型",
-        "去中心化声誉",
-        "IoT信任管理"
-      ],
-      "trust_dimensions": {
-        "decentralized_trust": "去中心化信任",
-        "reputation_system": "声誉系统",
-        "consensus_mechanism": "共识机制"
-      },
-      "bibtex": "@article{zhang2024blockchain, author={Zhang, R. and Wang, W. and Liu, H.}, title={Blockchain-Based Trust Management for IoT: A Survey}, journal={IEEE IoT J.}, volume={11}, number={3}, pages={2345-2360}, year={2024}, doi={10.1109/JIOT.2024.3367890} }",
-      "tags": [
-        "区块链",
-        "IoT",
-        "信任管理"
-      ],
-      "journal_info": {
-        "type": "SCI Q1期刊",
-        "ranking": "SCI Q1",
-        "publisher": "IEEE",
-        "access_url": "https://ieeexplore.ieee.org/document/1234569",
-        "doi": "10.1109/JIOT.2024.3367890",
-        "impact_factor": 10.6,
-        "impact_factor_label": "IF: 10.6",
-        "notes": "IEEE物联网期刊"
-      },
-      "cover_image": "img/blockchain_trust_2024.png"
-    },
-    {
-      "id": "software_supply_chain_2024",
-      "title": "Software Supply Chain Security: Threats and Defenses",
-      "authors": [
-        "D. K. D. P. M. G. B. S. L. F."
-      ],
-      "year": 2024,
-      "venue": "USENIX Security",
-      "institution": "USENIX",
-      "file": null,
-      "size": "N/A",
-      "abstract": "本文分析软件供应链安全威胁和防御机制。讨论SBOM、可信构建和依赖性安全等关键问题。",
-      "key_contributions": [
-        "供应链威胁分析",
-        "SBOM标准",
-        "可信构建实践"
-      ],
-      "trust_dimensions": {
-        "dependency_security": "依赖性安全",
-        "build_trust": "构建信任",
-        "sbom": "软件物料清单",
-        "code_integrity": "代码完整性"
-      },
-      "bibtex": "@article{supplychain2024, author={Various}, title={Software Supply Chain Security: Threats and Defenses}, journal={USENIX Security 2024}, pages={1-15}, year={2024}, doi={10.1109/USENIX.2024.00001} }",
-      "tags": [
-        "软件供应链",
-        "SBOM",
-        "安全防御"
-      ],
-      "journal_info": {
-        "type": "CCF-A会议",
-        "ranking": "CCF-A",
-        "publisher": "USENIX",
-        "access_url": "https://www.usenix.org/conference/usenixsecurity24",
-        "doi": "10.1109/USENIX.2024.00001",
-        "impact_factor": "N/A",
-        "impact_factor_label": "USENIX Security 2024",
-        "notes": "USENIX安全顶会"
-      },
-      "cover_image": "img/software_supply_chain_2024.png"
+      }
     },
     {
       "id": "privacy_preserving_ml_2024",
@@ -1298,15 +1108,14 @@
         "impact_factor": 14.8,
         "impact_factor_label": "IF: 14.8",
         "notes": "ACM计算综述"
-      },
-      "cover_image": "img/privacy_preserving_ml_2024.png"
+      }
     }
   ],
   "statistics": {
-    "total_papers": 27,
-    "sci_q1": 4,
-    "sci_q2": 9,
-    "ccf_a": 3,
+    "total_papers": 23,
+    "sci_q1": 3,
+    "sci_q2": 8,
+    "ccf_a": 1,
     "other": 11
   },
   "generated_at": "2025-02-01T14:00:00Z"

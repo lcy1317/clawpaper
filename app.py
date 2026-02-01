@@ -235,65 +235,7 @@ HTML_TEMPLATE = """
         .summary-content { background: rgba(0, 0, 0, 0.2); border-radius: 15px; padding: 25px; line-height: 1.9; color: #d0d0d0; white-space: pre-wrap; }
         
         
-        /* Sidebar Styles */
-        .main-layout { display: flex; gap: 30px; align-items: flex-start; }
-        .main-content { flex: 1; min-width: 0; }
-        .sidebar {
-            width: 320px;
-            position: sticky;
-            top: 20px;
-            flex-shrink: 0;
-        }
-        .sidebar-section {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .sidebar-section h3 {
-            color: #667eea;
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .top-dimensions { display: flex; flex-direction: column; gap: 10px; }
-        .dim-item { margin-bottom: 8px; }
-        .dim-header { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
-        .dim-rank { 
-            background: linear-gradient(135deg, #667eea, #764ba2); 
-            color: white; 
-            padding: 2px 6px; 
-            border-radius: 8px; 
-            font-size: 0.7em; 
-            font-weight: bold;
-            min-width: 28px;
-            text-align: center;
-        }
-        .dim-name { flex: 1; font-size: 0.85em; color: #e0e0e0; }
-        .dim-count { font-size: 0.75em; color: #888; }
-        .dim-bar-bg { background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; overflow: hidden; }
-        .dim-bar { height: 100%; border-radius: 3px; transition: width 0.3s; }
-        .stats-summary .stat-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .stats-summary .stat-row:last-child { border-bottom: none; }
-        .stats-summary span { color: #888; font-size: 0.9em; }
-        .stats-summary strong { color: #667eea; font-size: 1.1em; }
         
-        @media (max-width: 1200px) {
-            .main-layout { flex-direction: column; }
-            .sidebar { width: 100%; position: static; }
-            .sidebar-section { display: inline-block; width: calc(50% - 10px); vertical-align: top; }
-            .stats-summary { width: calc(50% - 10px); display: inline-block; }
-        }
-        @media (max-width: 768px) {
-            .sidebar-section, .stats-summary { width: 100%; }
         }
 
 
@@ -313,42 +255,49 @@ HTML_TEMPLATE = """
     </style>
 </head>
 <body>
-    <div class="container">        <div class="main-layout">
-            <div class="main-content">
-                <section class="summary-card">
-                    <h2>📚 小女仆的学习总结 💕</h2>
-                    <div class="summary-content">SUMMARY_CONTENT</div>
-                </section>
-                
-                <section class="filter-section">
-                    <h3 class="filter-title"><i class="fas fa-filter"></i> 文献筛选与排序</h3>
-                    <div class="filter-controls">
-                        <button class="sort-btn active" data-sort="default">📅 默认排序</button>
-                        <button class="sort-btn" data-sort="if_desc">📈 影响因子↓</button>
-                        <button class="sort-btn" data-sort="if_asc">📉 影响因子↑</button>
-                        <button class="sort-btn" data-sort="year_desc">🆕 最新发布</button>
-                        <button class="sort-btn" data-sort="year_asc">📜 最早发布</button>
-                        <select class="dimension-select" id="dimensionFilter">
-                            <option value信任维度筛选="">🎯 按</option>
-                            DIM_OPTIONS
-                        </select>
-                    </div>
-                </section>
-                
-                <h2 style="color: #fff; margin-bottom: 25px; text-align: center;"><i class="fas fa-book-open" style="color: #667eea;"></i> 学术文献</h2>
-                
-                <div class="papers-grid" id="papersGrid">PAPERS_HTML</div>
-                
-                <div class="no-results" id="noResults" style="display: none;">
-                    <i class="fas fa-search"></i>
-                    <h3>没有找到匹配的文献</h3>
-                    <p>请尝试调整筛选条件</p>
-                </div>
-            </div>
+    <div class="container">    <div class="container">
+        <header class="header">
+            <div class="mascot">🐱✨</div>
+            <h1>落先生的文献小窝 V2.2</h1>
+            <p class="subtitle">🌸 信任度评估系统专题 - 学术文献资源库 💕</p>
             
-            <div class="sidebar" id="sidebarSection">
-                <!-- Sidebar populated by JavaScript -->
+            <div class="stats-bar">
+                <div class="stat-card"><div class="stat-number">PAPERS_COUNT</div><div class="stat-label">📚 总文献数</div></div>
+                <div class="stat-card"><div class="stat-number">STATS_Q1</div><div class="stat-label">🟢 SCI Q1</div></div>
+                <div class="stat-card"><div class="stat-number">STATS_Q2</div><div class="stat-label">🟠 SCI Q2</div></div>
+                <div class="stat-card"><div class="stat-number">CCF_A</div><div class="stat-label">🔴 CCF-A</div></div>
+                <div class="stat-card"><div class="stat-number">DIM_COUNT</div><div class="stat-label">🎯 信任维度</div></div>
             </div>
+        </header>
+        
+        <section class="summary-card">
+            <h2>📚 小女仆的学习总结 💕</h2>
+            <div class="summary-content">SUMMARY_CONTENT</div>
+        </section>
+        
+        <section class="filter-section">
+            <h3 class="filter-title"><i class="fas fa-filter"></i> 文献筛选与排序</h3>
+            <div class="filter-controls">
+                <button class="sort-btn active" data-sort="default">📅 默认排序</button>
+                <button class="sort-btn" data-sort="if_desc">📈 影响因子↓</button>
+                <button class="sort-btn" data-sort="if_asc">📉 影响因子↑</button>
+                <button class="sort-btn" data-sort="year_desc">🆕 最新发布</button>
+                <button class="sort-btn" data-sort="year_asc">📜 最早发布</button>
+                <select class="dimension-select" id="dimensionFilter">
+                    <option value="">🎯 按信任维度筛选</option>
+                    DIM_OPTIONS
+                </select>
+            </div>
+        </section>
+        
+        <h2 style="color: #fff; margin-bottom: 25px; text-align: center;"><i class="fas fa-book-open" style="color: #667eea;"></i> 学术文献</h2>
+        
+        <div class="papers-grid" id="papersGrid">PAPERS_HTML</div>
+        
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>没有找到匹配的文献</h3>
+            <p>请尝试调整筛选条件</p>
         </div>
         
         <footer class="footer">
@@ -357,7 +306,9 @@ HTML_TEMPLATE = """
             <p style="margin-top: 5px; opacity: 0.5; font-size: 0.85em;">更新日期：CURRENT_DATE</p>
         </footer>
     </div>
-<div class="modal" id="paperModal">
+</div>
+
+    <div class="modal"<div class="modal" id="paperModal">
         <div class="modal-content"><span class="modal-close" onclick="closeModal()">&times;</span><div id="modalBody"></div></div>
     </div>
     
@@ -392,13 +343,7 @@ HTML_TEMPLATE = """
                 dimensionsHtml = '<h4 style="color: #667eea; margin: 20px 0 15px;"><i class="fas fa-cube"></i> 信任维度分析</h4><div class="dimensions-grid">' + dimsHtml + '</div>';
             }
             
-            let coverImageHtml = '';
-            if (paper.cover_image) {
-                coverImageHtml = '<img src="' + paper.cover_image + '" alt="封面" style="width:100%;max-height:200px;object-fit:cover;border-radius:16px;margin-bottom:20px;">';
-            }
-            
             document.getElementById('modalBody').innerHTML = 
-                coverImageHtml +
                 '<h2 class="modal-title">' + paper.title + '</h2>' +
                 '<div class="modal-meta">' +
                 '<p><i class="fas fa-user"></i> <strong>作者：</strong>' + paper.authors.join(', ') + '</p>' +
@@ -520,7 +465,7 @@ HTML_TEMPLATE = """
     </script>
     <script>
     // 维度统计数据
-    const dimensionStats = DIM_STATS_JSON;
+    
     
     function generateSidebar() {
         const sidebar = document.getElementById('sidebarSection');
@@ -804,7 +749,7 @@ def index():
     html = html.replace('PAPERS_COUNT', str(len(PAPERS_DATA)))
     html = html.replace('STATS_Q1', str(STATS.get('sci_q1', 0)))
     html = html.replace('STATS_Q2', str(STATS.get('sci_q2', 0)))
-    html = html.replace('STATS_EI', str(STATS.get('ei', 0)))
+    html = html.replace('CCF_A', str(STATS.get('ei', 0)))
     html = html.replace('DIM_COUNT', str(len(ALL_DIMENSIONS)))
     html = html.replace('CURRENT_DATE', datetime.now().strftime("%Y年%m月%d日"))
     html = html.replace('SUMMARY_CONTENT', SUMMARY)
@@ -816,10 +761,7 @@ def index():
         dim_options += '<option value="' + dim + '">' + dim + '</option>'
     html = html.replace('DIM_OPTIONS', dim_options)
     
-    # 加载维度统计数据
-    with open(os.path.join(LITERATURE_DIR, 'dimension_stats.json'), 'r', encoding='utf-8') as f:
-        dim_stats = json.load(f)
-    html = html.replace('DIM_STATS_JSON', json.dumps(dim_stats))
+    
     
     # 生成论文卡片
     papers_html = []
@@ -852,11 +794,6 @@ def index():
         badges += '<span class="badge badge-publisher">' + publisher + '</span>'
         
         # 封面图片
-        cover_image = paper.get('cover_image', '')
-        cover_html = ''
-        if cover_image:
-            cover_html = '<img src="' + cover_image + '" alt="封面" style="width:100%;height:120px;object-fit:cover;border-radius:12px;margin-bottom:15px;">'
-        
         card = '''<article class="paper-card" data-ranking="RANKING" data-if="IMPACT" data-year="YEAR">
             COVER_IMAGE
             <span class="paper-year-badge">YEAR</span>
