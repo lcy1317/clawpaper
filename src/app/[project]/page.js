@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import MiniMaxSettings from '../../components/MiniMaxSettings'
 import AIChat from '../../components/AIChat'
@@ -9,20 +9,20 @@ const PROJECT_INFO = {
   'trust-literature': {
     name: '信任度文献调研',
     color: 'from-blue-500 to-cyan-500',
-    description: '深度调研系统信任度评估文献，聚焦AI系统可信度、云服务可信度、软件供应链安全、零信任架构。本项目收录了1000+篇顶会顶刊论文，涵盖CVPR、NeurIPS、ICML、ICLR、AAAI等顶级会议，以及Nature、Science、IEEE TPAMI等权威期刊。所有文献均经过人工筛选和分类，包含完整的论文元数据、影响因子、期刊分区、信任维度标注和核心贡献点分析。',
-    stats: { total: 1000, q1: 450, q2: 280, q3: 150, ei: 120 }
+    description: '深度调研系统信任度评估文献，聚焦AI系统可信度、云服务可信度、软件供应链安全、零信任架构。',
+    stats: { total: 500, q1: 124, q2: 124, q3: 101, ei: 73 }
   },
   'quant-papers': {
     name: '量化论文分析',
     color: 'from-purple-500 to-pink-500',
-    description: '量化交易相关学术论文与策略研究。涵盖因子模型、机器学习预测、组合优化、风险管理、高频交易等核心领域。收录JPM、QuantLib、AQR等顶级期刊和会议论文，提供策略回测框架、因子分析工具和实盘指导。',
-    stats: { total: 500, q1: 200, q2: 150, q3: 100, ei: 50 }
+    description: '量化交易相关学术论文与策略研究。涵盖因子模型、机器学习预测、组合优化、风险管理、高频交易等核心领域。',
+    stats: { total: 0, q1: 0, q2: 0, q3: 0, ei: 0 }
   },
   'ai-safety': {
     name: 'AI安全研究',
     color: 'from-red-500 to-orange-500',
-    description: '人工智能安全、对齐与伦理研究。聚焦大模型安全、RLHF对齐、价值观约束、对抗鲁棒性、隐私保护、公平性等前沿课题。收录ICML、NeurIPS、ICLR、AAAI等安全专题论文，提供安全评估框架和最佳实践指南。',
-    stats: { total: 300, q1: 120, q2: 80, q3: 60, ei: 40 }
+    description: '人工智能安全、对齐与伦理研究。聚焦大模型安全、RLHF对齐、价值观约束、对抗鲁棒性、隐私保护、公平性等前沿课题。',
+    stats: { total: 0, q1: 0, q2: 0, q3: 0, ei: 0 }
   }
 }
 
@@ -43,6 +43,31 @@ function getRankingInfo(ranking) {
   return badge || { label: ranking, color: 'bg-gray-100 text-gray-800 border-gray-200' }
 }
 
+// 星级评分组件
+function StarRating({ rating, onChange, readonly = false, size = 'normal') {
+  const sizeClasses = size === 'small' ? 'w-4 h-4' : size === 'large' ? 'w-6 h-6' : 'w-5 h-5'
+  
+  return (
+    <div className="flex items-center gap-1">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <button
+          key={star}
+          type="button"
+          disabled={readonly}
+          onClick={() => !readonly && onChange(star)}
+          className={`${sizeClasses} transition-transform ${readonly ? 'cursor-default' : 'cursor-pointer hover:scale-110'} ${
+            star <= rating ? 'text-amber-400' : 'text-gray-300'
+          }`}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+        </button>
+      ))}
+    </div>
+  )
+}
+
 export default function ProjectPage({ params }) {
   const [papers, setPapers] = useState([])
   const [stats, setStats] = useState({ total: 0, q1: 0, q2: 0, q3: 0, ei: 0 })
@@ -53,20 +78,31 @@ export default function ProjectPage({ params }) {
   const [apiKey, setApiKey] = useState('')
   const [showChat, setShowChat] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
+  const [starFilter, setStarFilter] = useState(0) // 0 = 全部
+  const [localNotes, setLocalNotes] = useState({}) // 本地备注缓存
+  const [editingNote, setEditingNote] = useState(null)
   
+  // 加载保存的API密钥
   useEffect(() => {
-    // 加载保存的API密钥
     const savedKey = localStorage.getItem('minimax_api_key')
     if (savedKey) setApiKey(savedKey)
   }, [])
   
+  // 加载论文数据
   useEffect(() => {
     async function loadPapers() {
       try {
         const res = await fetch(`/api/papers?project=${params.project}`)
         const data = await res.json()
-        setPapers(data.papers || [])
+        const papersData = data.papers || []
+        setPapers(papersData)
         setStats(data.stats || { total: 0, q1: 0, q2: 0, q3: 0, ei: 0 })
+        
+        // 加载本地备注
+        const savedNotes = localStorage.getItem(`clawpaper_notes_${params.project}`)
+        if (savedNotes) {
+          setLocalNotes(JSON.parse(savedNotes))
+        }
       } catch (error) {
         console.error('加载文献失败:', error)
       } finally {
@@ -76,6 +112,15 @@ export default function ProjectPage({ params }) {
     loadPapers()
   }, [params.project])
   
+  // 计算星级统计
+  const starStats = [0, 0, 0, 0, 0, 0] // index 0 = 未评分(0星), 1-5 = 对应星级
+  papers.forEach(p => {
+    const rating = p.star_rating || 0
+    if (rating >= 0 && rating <= 5) {
+      starStats[rating]++
+    }
+  })
+  
   const projectInfo = PROJECT_INFO[params.project] || { 
     name: '未知项目', 
     color: 'from-gray-400 to-gray-500', 
@@ -84,6 +129,11 @@ export default function ProjectPage({ params }) {
   }
   
   const filteredPapers = papers.filter(p => {
+    // 星级筛选
+    if (starFilter > 0 && (p.star_rating || 0) !== starFilter) return false
+    if (starFilter === -1 && (p.star_rating || 0) > 0) return false // 只显示未评分
+    
+    // 搜索筛选
     if (!searchQuery) return true
     const q = searchQuery.toLowerCase()
     return p.title?.toLowerCase().includes(q) ||
@@ -96,6 +146,46 @@ export default function ProjectPage({ params }) {
     if (sortType === 'year_asc') return (a.year || 0) - (b.year || 0)
     return 0
   })
+  
+  // 更新星级评分
+  const updateStarRating = async (paperId, rating) => {
+    try {
+      const res = await fetch('/api/papers/mark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: paperId, star_rating: rating })
+      })
+      const data = await res.json()
+      if (data.success) {
+        // 更新本地状态
+        setPapers(papers.map(p => 
+          p.id === paperId ? { ...p, star_rating: rating } : p
+        ))
+      }
+    } catch (error) {
+      console.error('更新评分失败:', error)
+    }
+  }
+  
+  // 更新备注（本地存储）
+  const updateNote = useCallback((paperId, note) => {
+    const newNotes = { ...localNotes, [paperId]: note }
+    setLocalNotes(newNotes)
+    localStorage.setItem(`clawpaper_notes_${params.project}`, JSON.stringify(newNotes))
+  }, [localNotes, params.project])
+  
+  // 保存备注到服务器
+  const saveNoteToServer = async (paperId, note) => {
+    try {
+      await fetch('/api/papers/mark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: paperId, notes: note })
+      })
+    } catch (error) {
+      console.error('保存备注失败:', error)
+    }
+  }
   
   if (loading) {
     return (
@@ -179,6 +269,7 @@ export default function ProjectPage({ params }) {
                   className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                 />
               </div>
+              
               <select 
                 value={sortType}
                 onChange={(e) => setSortType(e.target.value)}
@@ -190,6 +281,46 @@ export default function ProjectPage({ params }) {
                 <option value="year_desc">🆕 最新发布</option>
                 <option value="year_asc">📜 最早发布</option>
               </select>
+            </div>
+            
+            {/* 星级筛选 */}
+            <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm mb-6">
+              <div className="text-sm font-medium text-gray-700 mb-3">⭐ 星级筛选</div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setStarFilter(0)}
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    starFilter === 0 
+                      ? 'bg-blue-500 text-white' 
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  全部 ({stats.total})
+                </button>
+                <button
+                  onClick={() => setStarFilter(-1)}
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    starFilter === -1 
+                      ? 'bg-blue-500 text-white' 
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  ⭐ 未评分 ({starStats[0]})
+                </button>
+                {[1, 2, 3, 4, 5].map(star => (
+                  <button
+                    key={star}
+                    onClick={() => setStarFilter(star)}
+                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 ${
+                      starFilter === star 
+                        ? 'bg-amber-400 text-white' 
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {'⭐'.repeat(star)} ({starStats[star]})
+                  </button>
+                ))}
+              </div>
             </div>
           </header>
 
@@ -212,6 +343,8 @@ export default function ProjectPage({ params }) {
                   const impact = journal.impact_factor || 0
                   const publisher = journal.publisher || paper.institution || ''
                   const dimensions = Object.keys(paper.trust_dimensions || {}).slice(0, 5)
+                  const rating = paper.star_rating || 0
+                  const hasNote = (localNotes[paper.id] || '').trim().length > 0
                   
                   return (
                     <article 
@@ -223,9 +356,17 @@ export default function ProjectPage({ params }) {
                         <h3 className="text-lg font-semibold text-gray-800 pr-16 leading-relaxed group-hover:text-blue-600 transition-colors">
                           {paper.title}
                         </h3>
-                        <span className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full flex-shrink-0">
-                          {paper.year}
-                        </span>
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          {rating > 0 && (
+                            <span className="text-amber-400">{'⭐'.repeat(rating)}</span>
+                          )}
+                          {hasNote && (
+                            <span className="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full">📝</span>
+                          )}
+                          <span className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            {paper.year}
+                          </span>
+                        </div>
                       </div>
                       
                       <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
@@ -288,15 +429,19 @@ export default function ProjectPage({ params }) {
           </main>
 
           <footer className="mt-16 text-center text-gray-400 text-sm py-8 border-t border-gray-200">
-            <p>© 2026 ClawPaper · 学术文献管理平台</p>
+            <p>© 2026 ClawPaper · 学术文献管理平台 · 由可爱的小女仆精心打造 💕</p>
           </footer>
         </div>
       </div>
 
+      {/* 详情弹窗 */}
       {selectedPaper && (
         <div 
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedPaper(null)}
+          onClick={() => {
+            setSelectedPaper(null)
+            setEditingNote(null)
+          }}
         >
           <div 
             className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
@@ -304,7 +449,10 @@ export default function ProjectPage({ params }) {
           >
             <div className="p-6 md:p-8 relative">
               <button 
-                onClick={() => setSelectedPaper(null)}
+                onClick={() => {
+                  setSelectedPaper(null)
+                  setEditingNote(null)
+                }}
                 className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl"
               >
                 &times;
@@ -313,6 +461,20 @@ export default function ProjectPage({ params }) {
               <h2 className="text-2xl font-bold text-gray-800 mb-6 pr-8 leading-relaxed">
                 {selectedPaper.title}
               </h2>
+              
+              {/* 星级评分 */}
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-sm font-medium text-gray-700">⭐ 评分：</span>
+                <StarRating 
+                  rating={selectedPaper.star_rating || 0} 
+                  onChange={(rating) => updateStarRating(selectedPaper.id, rating)}
+                />
+                {(selectedPaper.star_rating || 0) > 0 && (
+                  <span className="text-sm text-gray-500">
+                    ({selectedPaper.star_rating}星)
+                  </span>
+                )}
+              </div>
               
               <div className="text-gray-600 mb-6 space-y-2">
                 <p><span className="font-medium text-gray-800">作者：</span>{selectedPaper.authors?.join(', ')}</p>
@@ -347,6 +509,62 @@ export default function ProjectPage({ params }) {
               <h4 className="text-xl font-bold text-gray-800 mb-4">摘要</h4>
               <div className="bg-gray-50 rounded-xl p-4 mb-6 text-gray-600 leading-relaxed">
                 {selectedPaper.abstract || '暂无摘要'}
+              </div>
+              
+              {/* 备注区域 */}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-xl font-bold text-gray-800">📝 备注</h4>
+                  {editingNote !== selectedPaper.id && (localNotes[selectedPaper.id] || '').trim().length > 0 && (
+                    <button
+                      onClick={() => setEditingNote(selectedPaper.id)}
+                      className="text-sm text-blue-600 hover:text-blue-800"
+                    >
+                      ✏️ 编辑
+                    </button>
+                  )}
+                </div>
+                
+                {editingNote === selectedPaper.id ? (
+                  <div className="space-y-3">
+                    <textarea
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                      rows={4}
+                      placeholder="添加备注..."
+                      defaultValue={localNotes[selectedPaper.id] || ''}
+                      id={`note-${selectedPaper.id}`}
+                    />
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => {
+                          const note = document.getElementById(`note-${selectedPaper.id}`).value
+                          updateNote(selectedPaper.id, note)
+                          saveNoteToServer(selectedPaper.id, note)
+                          setEditingNote(null)
+                        }}
+                        className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                      >
+                        💾 保存
+                      </button>
+                      <button
+                        onClick={() => setEditingNote(null)}
+                        className="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-colors"
+                      >
+                        取消
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div 
+                    className="bg-yellow-50 rounded-xl p-4 text-gray-700 leading-relaxed cursor-pointer hover:bg-yellow-100 transition-colors"
+                    onClick={() => setEditingNote(selectedPaper.id)}
+                  >
+                    {(localNotes[selectedPaper.id] || '').trim().length > 0 
+                      ? localNotes[selectedPaper.id]
+                      : <span className="text-gray-400 italic">点击添加备注...</span>
+                    }
+                  </div>
+                )}
               </div>
               
               {selectedPaper.bibtex && (

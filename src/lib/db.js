@@ -34,6 +34,8 @@ db.exec(`
     key_contributions TEXT,
     evaluation_method TEXT,
     trust_dimensions TEXT,
+    star_rating INTEGER DEFAULT 0,
+    notes TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
   )
