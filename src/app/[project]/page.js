@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import MiniMaxSettings from '../../components/MiniMaxSettings'
+import AIChat from '../../components/AIChat'
 
 const PROJECT_INFO = {
   'trust-literature': {
@@ -48,6 +50,15 @@ export default function ProjectPage({ params }) {
   const [searchQuery, setSearchQuery] = useState('')
   const [sortType, setSortType] = useState('default')
   const [selectedPaper, setSelectedPaper] = useState(null)
+  const [apiKey, setApiKey] = useState('')
+  const [showChat, setShowChat] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
+  
+  useEffect(() => {
+    // 加载保存的API密钥
+    const savedKey = localStorage.getItem('minimax_api_key')
+    if (savedKey) setApiKey(savedKey)
+  }, [])
   
   useEffect(() => {
     async function loadPapers() {
@@ -102,13 +113,29 @@ export default function ProjectPage({ params }) {
       <div className="p-4 md:p-6">
         <div className="max-w-7xl mx-auto">
           <header className="mb-8">
-            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-800 mb-6 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                <path d="m12 19-7-7 7-7"></path>
-                <path d="M19 12H5"></path>
-              </svg>
-              返回首页
-            </Link>
+            <div className="flex items-center justify-between mb-6">
+              <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-800 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <path d="m12 19-7-7 7-7"></path>
+                  <path d="M19 12H5"></path>
+                </svg>
+                返回首页
+              </Link>
+              
+              <button
+                onClick={() => {
+                  if (!apiKey) {
+                    setShowSettings(true)
+                  } else {
+                    setShowChat(true)
+                  }
+                }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all shadow-lg shadow-purple-500/25"
+              >
+                <span>🤖</span>
+                <span className="font-medium">AI助手</span>
+              </button>
+            </div>
 
             <div className={`bg-gradient-to-r ${projectInfo.color} rounded-2xl p-6 md:p-8 mb-6 text-white shadow-lg`}>
               <h1 className="text-2xl md:text-3xl font-bold mb-3">{projectInfo.name}</h1>
@@ -342,6 +369,35 @@ export default function ProjectPage({ params }) {
             </div>
           </div>
         </div>
+      )}
+
+      {/* 设置弹窗 */}
+      {showSettings && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setShowSettings(false)}
+        >
+          <div 
+            className="w-full max-w-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <MiniMaxSettings 
+              apiKey={apiKey} 
+              onApiKeyChange={(key) => {
+                setApiKey(key)
+                setShowSettings(false)
+              }} 
+            />
+          </div>
+        </div>
+      )}
+
+      {/* AI对话弹窗 */}
+      {showChat && apiKey && (
+        <AIChat 
+          apiKey={apiKey} 
+          onClose={() => setShowChat(false)} 
+        />
       )}
     </div>
   )
