@@ -52,7 +52,7 @@ export default function ProjectPage({ params }) {
   useEffect(() => {
     async function loadPapers() {
       try {
-        const res = await fetch('/api/papers')
+        const res = await fetch(`/api/papers?project=${params.project}`)
         const data = await res.json()
         setPapers(data.papers || [])
         setStats(data.stats || { total: 0, q1: 0, q2: 0, q3: 0, ei: 0 })
@@ -63,7 +63,7 @@ export default function ProjectPage({ params }) {
       }
     }
     loadPapers()
-  }, [])
+  }, [params.project])
   
   const projectInfo = PROJECT_INFO[params.project] || { 
     name: '未知项目', 

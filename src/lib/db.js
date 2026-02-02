@@ -127,10 +127,14 @@ function getAllPapers(project = null) {
   const params = []
   
   if (project === 'trust-literature') {
-    query += ' WHERE trust_dimensions IS NOT NULL AND trust_dimensions != "{}"'
+    query += ' WHERE trust_dimensions IS NOT NULL AND trust_dimensions != ?'
+    params.push('{}')
   }
   
   query += ' ORDER BY year DESC, impact_factor DESC'
+  
+  console.log('SQL Query:', query)
+  console.log('Params:', params)
   
   const stmt = db.prepare(query)
   const rows = stmt.all(...params)
