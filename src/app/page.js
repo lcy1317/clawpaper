@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import MiniMaxSettings from './components/MiniMaxSettings'
-import AIChat from './components/AIChat'
+import MiniMaxSettings from '../components/MiniMaxSettings'
+import AIChat from '../components/AIChat'
 import { useState } from 'react'
 
 const PROJECTS = [
