@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import MiniMaxSettings from './components/MiniMaxSettings'
 import AIChat from './components/AIChat'
