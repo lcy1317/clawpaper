@@ -7,7 +7,7 @@ import json
 from datetime import datetime
 
 app = Flask(__name__)
-LITERATURE_DIR = "/root/clawpaper"
+LITERATURE_DIR = "/Users/lcy/clawd/clawpaper"
 
 def load_papers():
     # 优先加载新的500篇文献
@@ -863,5 +863,5 @@ def api_papers():
 
 if __name__ == '__main__':
     print("🐱 落先生的文献小窝 V2.0 启动啦！")
-    print("📍 访问地址：http://localhost:5000")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    print("📍 访问地址：http://localhost:5001")
+    app.run(host='0.0.0.0', port=5001, debug=True)

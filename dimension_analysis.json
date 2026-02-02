@@ -1,0 +1,127 @@
+{
+  "total_papers": 1000,
+  "analysis_date": "2026-02-02",
+  "dimension_frequency": {
+    "transparency": 411,
+    "fairness": 177,
+    "robustness": 315,
+    "accountability": 328,
+    "privacy": 197,
+    "safety": 234,
+    "trustworthiness": 1741,
+    "human_agency": 99
+  },
+  "top_5_dimensions": [
+    "trustworthiness",
+    "transparency",
+    "robustness",
+    "accountability",
+    "safety"
+  ],
+  "dimension_details": {
+    "trustworthiness": {
+      "frequency": 1741,
+      "score": 2208.0,
+      "cooccurrence": {
+        "transparency": 204,
+        "fairness": 93,
+        "robustness": 174,
+        "accountability": 118,
+        "privacy": 130,
+        "safety": 148,
+        "human_agency": 67
+      }
+    },
+    "transparency": {
+      "frequency": 411,
+      "score": 757.0,
+      "cooccurrence": {
+        "fairness": 80,
+        "robustness": 100,
+        "accountability": 107,
+        "privacy": 76,
+        "safety": 84,
+        "trustworthiness": 204,
+        "human_agency": 41
+      }
+    },
+    "robustness": {
+      "frequency": 315,
+      "score": 619.5,
+      "cooccurrence": {
+        "transparency": 100,
+        "fairness": 49,
+        "accountability": 70,
+        "privacy": 95,
+        "safety": 83,
+        "trustworthiness": 174,
+        "human_agency": 38
+      }
+    },
+    "accountability": {
+      "frequency": 328,
+      "score": 608.5,
+      "cooccurrence": {
+        "transparency": 107,
+        "fairness": 72,
+        "robustness": 70,
+        "privacy": 65,
+        "safety": 89,
+        "trustworthiness": 118,
+        "human_agency": 40
+      }
+    },
+    "safety": {
+      "frequency": 234,
+      "score": 516.5,
+      "cooccurrence": {
+        "transparency": 84,
+        "fairness": 46,
+        "robustness": 83,
+        "accountability": 89,
+        "privacy": 75,
+        "trustworthiness": 148,
+        "human_agency": 40
+      }
+    },
+    "privacy": {
+      "frequency": 197,
+      "score": 456.5,
+      "cooccurrence": {
+        "transparency": 76,
+        "fairness": 51,
+        "robustness": 95,
+        "accountability": 65,
+        "safety": 75,
+        "trustworthiness": 130,
+        "human_agency": 27
+      }
+    },
+    "fairness": {
+      "frequency": 177,
+      "score": 386.50000000000006,
+      "cooccurrence": {
+        "transparency": 80,
+        "robustness": 49,
+        "accountability": 72,
+        "privacy": 51,
+        "safety": 46,
+        "trustworthiness": 93,
+        "human_agency": 28
+      }
+    },
+    "human_agency": {
+      "frequency": 99,
+      "score": 239.5,
+      "cooccurrence": {
+        "trustworthiness": 67,
+        "safety": 40,
+        "privacy": 27,
+        "transparency": 41,
+        "fairness": 28,
+        "robustness": 38,
+        "accountability": 40
+      }
+    }
+  }
+}
