@@ -116,23 +116,23 @@ export default function ProjectPage({ params }) {
               
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
-                  <div className="text-2xl font-bold">{projectInfo.stats.total}</div>
+                  <div className="text-2xl font-bold">{stats.total}</div>
                   <div className="text-xs text-white/80">📚 总文献</div>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
-                  <div className="text-2xl font-bold">{projectInfo.stats.q1}</div>
+                  <div className="text-2xl font-bold">{stats.q1}</div>
                   <div className="text-xs text-white/80">🟢 Q1/CCF-A</div>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
-                  <div className="text-2xl font-bold">{projectInfo.stats.q2}</div>
+                  <div className="text-2xl font-bold">{stats.q2}</div>
                   <div className="text-xs text-white/80">🟠 Q2/CCF-B</div>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
-                  <div className="text-2xl font-bold">{projectInfo.stats.q3}</div>
+                  <div className="text-2xl font-bold">{stats.q3}</div>
                   <div className="text-xs text-white/80">🟡 Q3/CCF-C</div>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
-                  <div className="text-2xl font-bold">{projectInfo.stats.ei}</div>
+                  <div className="text-2xl font-bold">{stats.ei}</div>
                   <div className="text-xs text-white/80">⚪ EI</div>
                 </div>
               </div>

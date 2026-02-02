@@ -7,6 +7,15 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url)
     const project = searchParams.get('project')
     
+    // 只允许 trust-literature 项目访问数据，其他项目暂无数据
+    if (project !== 'trust-literature') {
+      return NextResponse.json({ 
+        papers: [], 
+        stats: { total: 0, q1: 0, q2: 0, q3: 0, ei: 0 },
+        message: '该项目的文献数据正在整理中'
+      })
+    }
+    
     const papers = getAllPapers(project)
     const stats = getStats()
     
